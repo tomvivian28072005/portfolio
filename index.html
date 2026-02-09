@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Tom</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <!-- Burger Menu (visible tout le temps) -->
+    <button id="burger-menu" class="burger-btn-fixed">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <button id="burger-menu-sidebar" class="burger-btn-sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="sidebar-controls">
+                <button id="theme-toggle" class="control-btn">☽</button>
+                <button id="lang-toggle" class="control-btn">FR</button>
+            </div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="#education" data-i18n="nav.education">Éducation</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Contenu Principal -->
+    <main id="main-content">
+        <section id="home" class="page-section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <h1 class="hero-title">VIVIAN Tom</h1>
+                        <p class="hero-description" data-i18n="hero.subtitle" data-i18n-mode="html">Je suis étudiant en école d'ingénieur à <a href="https://www.supmicrotech.fr/" target="_blank" rel="noopener">SupMicroTech-ENSMM</a> et voici mon portfolio</p>
+                        
+                        <!-- Skill Orbit -->
+                        <div class="orbit-container">
+                            <button class="orbit-nav orbit-nav-left" id="orbit-prev">‹</button>
+                            
+                            <div id="orbit-skills" class="skill-orbit" data-section="skills" data-link="#projects">
+                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
+                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
+                                <div class="orbit-background-title" data-i18n="orbit.skills.title">Hard skills</div>
+                                <div class="skill-tag" data-i18n="orbit.skills.tag.theory">Physique théorique</div>
+                                <div class="skill-tag" data-i18n="orbit.skills.tag.python">Python</div>
+                                <div class="skill-tag" data-i18n="orbit.skills.tag.web">HTML/CSS/JavaScript</div>
+                                <div class="skill-tag" data-i18n="orbit.skills.tag.matlab">MATLAB</div>
+                            </div>
+                            
+                            
+                            <div id="orbit-projects" class="skill-orbit hidden" data-section="projects" data-link="#projects">
+                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
+                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
+                                <div class="orbit-background-title" data-i18n="orbit.projects.title" data-i18n-mode="html">Projets &<br>Expériences</div>
+                                <div class="skill-tag" data-i18n="orbit.projects.tag.portfolio">Portfolio</div>
+                                <div class="skill-tag" data-i18n="orbit.projects.tag.formula">Formula Student</div>
+                                <div class="skill-tag" data-i18n="orbit.projects.tag.tipe">TIPE</div>
+                                <div class="skill-tag" data-i18n="orbit.projects.tag.operator">Opérateur presse</div>
+                                <div class="skill-tag" data-i18n="orbit.projects.tag.renov">Rénovation</div>
+                            </div>
+
+                            <div id="orbit-qualities" class="skill-orbit hidden" data-section="qualities" data-link="#projects">
+                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
+                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
+                                <div class="orbit-background-title" data-i18n="orbit.qualities.title">Soft skills</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.rigorous">Rigoureux</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.curious">Curieux</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.autonomous">Autonome</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.adaptable">Adaptable</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.pm">Gestion de projet</div>
+                                <div class="skill-tag" data-i18n="orbit.qualities.tag.team">Esprit d'équipe</div>
+                            </div>
+                            
+                            <button class="orbit-nav orbit-nav-right" id="orbit-next">›</button>
+                            
+                            <div class="orbit-indicators">
+                                <span class="indicator" data-section="skills" style="opacity: 1;"></span>
+                                <span class="indicator" data-section="projects"></span>
+                                <span class="indicator" data-section="qualities"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="page-section">
+            <div class="projects-container">
+                <div class="projects-header">
+                    <h1 class="page-title" data-i18n="projects.title">Mes Expériences et Projets</h1>
+                    <button class="projects-reset-btn" type="button" aria-label="Réinitialiser l’ordre" data-i18n-attr="aria-label" data-i18n-attr-key="projects.reset.aria">⟲</button>
+                </div>
+                
+                <div class="flex-container">
+                    <!-- Colonne de Gauche : Compétences -->
+                    <aside class="skills-sidebar">
+                        <h2 class="sidebar-title" data-i18n="projects.skills.title">Compétences</h2>
+                        <div class="skills-list">
+                            <button class="skill-filter" data-target-skill="physique-theorique" data-i18n="projects.skills.theory">Physique théorique</button>
+                            <button class="skill-filter" data-target-skill="python" data-i18n="projects.skills.python">Python</button>
+                            <button class="skill-filter" data-target-skill="html-js" data-i18n="projects.skills.web">HTML/CSS/JavaScript</button>
+                            <button class="skill-filter" data-target-skill="sourcing" data-i18n="projects.skills.sourcing">Sourcing</button>
+                            <button class="skill-filter" data-target-skill="gestion-projet" data-i18n="projects.skills.pm">Gestion de projet</button>
+                            <button class="skill-filter" data-target-skill="travail-equipe" data-i18n="projects.skills.team">Travail d'équipe</button>
+                            <button class="skill-filter" data-target-skill=""></button>
+                        </div>
+                    </aside>
+
+                    <!-- Colonne de Droite : Projets -->
+                    <section class="projects-list">
+                        <!-- Projet 1 : Portfolio Web -->
+                        <article class="project-card" data-skills="html-js">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p1.title">Portfolio Interactif</h3>
+                                <span class="project-years">2026</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p1.summary">Conception d’un portfolio moderne mettant en valeur les projets et compétences.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p1.dates" data-i18n-mode="html"><strong>Dates :</strong> Février 2026 — 2 semaines</p>
+                                <p data-i18n="projects.p1.goal" data-i18n-mode="html"><strong>Objectif :</strong> Créer une vitrine interactive claire et différenciante pour présenter les projets.</p>
+                                <p data-i18n="projects.p1.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
+                                <ul class="project-actions-list">
+                                    <li data-i18n="projects.p1.action1">Conception UI/UX et structuration des pages pour une navigation fluide.</li>
+                                </ul>
+                                <p data-i18n="projects.p1.skills" data-i18n-mode="html"><strong>Compétences :</strong> HTML/CSS/JS</p>
+                                <p data-i18n="projects.p1.results" data-i18n-mode="html"><strong>Résultats :</strong> Site responsive, esthétique et performant, avec interactions cohérentes et lecture facilitée des expériences.</p>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p1.details" data-i18n-mode="html"><strong>Description détaillée :</strong> Architecture multi-pages (accueil, projets, éducation, contact), optimisation de l’expérience utilisateur, et intégration progressive d’éléments interactifs pour valoriser le contenu.</p>
+                                        <p data-i18n="projects.p1.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </article>
+
+                        <!-- Projet 2 : Mu Racing Team -->
+                        <article class="project-card" data-skills="solidworks mecanique production html-js sourcing gestion-projet">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p2.title">Mu Racing Team - Formula Student</h3>
+                                <span class="project-years">2025–2026</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p2.summary">Organisation interne et externe, et recherche de sponsors pour l'association de sport automobile.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p2.dates" data-i18n-mode="html"><strong>Dates :</strong> Octobre 2025–Janvier 2026</p>
+                                <p data-i18n="projects.p2.goal" data-i18n-mode="html"><strong>Objectif :</strong> Structurer la collaboration interne et externe, et centraliser les ressources de l’équipe.</p>
+                                <p class="subaction-title" data-i18n="projects.p2.sub1.title" data-i18n-mode="html"><strong>Structuration Collaborative (Notion)</strong></p>
+                                <div class="subaction-body">
+                                    <p data-i18n="projects.p2.sub1.problem" data-i18n-mode="html"><strong>Problématique :</strong> Absence de plateforme centralisée pour le partage des avancées entre les différents départements.</p>
+                                    <p data-i18n="projects.p2.sub1.action" data-i18n-mode="html"><strong>Action :</strong> Déploiement et architecture d'un espace de travail Notion.</p>
+                                    <p data-i18n="projects.p2.sub1.result" data-i18n-mode="html"><strong>Résultat :</strong> Centralisation de la documentation technique, suivi des tâches en temps réel et amélioration de la communication inter-pôles.</p>
+                                    <p data-i18n="projects.p2.sub1.skills" data-i18n-mode="html"><strong>Compétences mobilisées :</strong> Gestion de projet, architecture de l'information, conduite du changement.</p>
+                                </div>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p2.sub1.details">Quelques images du Notion</p>
+                                        <div class="project-subdetails-photos">
+                                            <figure>
+                                                <img src="assets/arbre-notion.png" alt="Arborescence de la plateforme Notion" />
+                                                <figcaption data-i18n="projects.p2.sub1.caption1">Arborescence de la plateforme</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/accueil-notion.png" alt="Page d'accueil Notion" />
+                                                <figcaption data-i18n="projects.p2.sub1.caption2">Page d’accueil</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/chassis-notion.png" alt="Page de département - Châssis" />
+                                                <figcaption data-i18n="projects.p2.sub1.caption3">Page de département (Châssis)</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/centre_de_document-notion.png" alt="Centre de documents Notion" />
+                                                <figcaption data-i18n="projects.p2.sub1.caption4">Centre de documents</figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </details>
+                                <p class="subaction-title" data-i18n="projects.p2.sub2.title" data-i18n-mode="html"><strong>Partenariat & Fabrication (Châssis)</strong></p>
+                                <div class="subaction-body">
+                                    <p data-i18n="projects.p2.sub2.problem" data-i18n-mode="html"><strong>Problématique :</strong> Manque d'équipements internes (découpe laser, cintreuse) pour la fabrication du châssis.</p>
+                                    <p data-i18n="projects.p2.sub2.action" data-i18n-mode="html"><strong>Action :</strong> Prospection active de sous-traitants et négociation de partenariats.</p>
+                                    <p data-i18n="projects.p2.sub2.result" data-i18n-mode="html"><strong>Résultat :</strong> Obtention d'un accord de mécénat industriel incluant la fabrication gratuite du châssis, permettant une économie majeure sur le budget de l'association.</p>
+                                    <p data-i18n="projects.p2.sub2.skills" data-i18n-mode="html"><strong>Compétences mobilisées :</strong> Optimisation des coûts (sourcing), négociation B2B.</p>
+                                </div>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p2.sub2.details">En cours.</p>
+                                    </div>
+                                </details>
+                                <p class="subaction-title" data-i18n="projects.p2.sub3.title" data-i18n-mode="html"><strong>Vitrine Digitale (Site Web)</strong></p>
+                                <div class="subaction-body">
+                                    <p data-i18n="projects.p2.sub3.problem" data-i18n-mode="html"><strong>Problématique :</strong> Besoin de visibilité pour attirer de nouveaux sponsors et présenter l'avancement.</p>
+                                    <p data-i18n="projects.p2.sub3.action" data-i18n-mode="html"><strong>Action :</strong> Conception et développement d'un site internet dédié.</p>
+                                    <p data-i18n="projects.p2.sub3.result" data-i18n-mode="html"><strong>Résultat :</strong> Mise en place d'un support de communication professionnel pour valoriser les futurs sponsors et le projet auprès du public.</p>
+                                    <p data-i18n="projects.p2.sub3.skills" data-i18n-mode="html"><strong>Compétences mobilisées :</strong> Développement web (HTML, CSS, JavaScript), stratégie de marque (branding), gestion de contenu.</p>
+                                    <p data-i18n="projects.p2.sub3.site" data-i18n-mode="html"><strong>Site web :</strong> <a href="https://tomvivian28072005.github.io/muracingteam-site/index.html" target="_blank" rel="noopener">Voir le site</a></p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Projet 3 : Stage Plastigray -->
+                        <article class="project-card" data-skills="production travail-equipe">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p3.title">Plastigray — Opérateur presse à injection plastique</h3>
+                                <span class="project-years">2025</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p3.summary">Travail d'été en production de pièces plastiques par injection.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p3.role" data-i18n-mode="html"><strong>Rôle :</strong> Opérateur presse à injection plastique (nuit)</p>
+                                <p data-i18n="projects.p3.dates" data-i18n-mode="html"><strong>Dates :</strong> Juillet 2025 — 2 semaines</p>
+                                <p data-i18n="projects.p3.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
+                                <ul class="project-actions-list">
+                                    <li data-i18n="projects.p3.action1">Pilotage de machines de moulage par injection et suivi de production.</li>
+                                    <li data-i18n="projects.p3.action2">Contrôle qualité des pièces et application des procédures de sécurité.</li>
+                                    <li data-i18n="projects.p3.action3">Travail en coordination avec les équipes maintenance et production.</li>
+                                </ul>
+                                <p data-i18n="projects.p3.skills" data-i18n-mode="html"><strong>Compétences concrètes:</strong> Contrôle Qualité, Sécurité & Procédures, Travail d'Équipe</p>
+                                <p data-i18n="projects.p3.results" data-i18n-mode="html"><strong>Résultats :</strong> Travail bien réalisé avec un retour positif de la manageuse, et expérience concrète en production industrielle.</p>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p3.details" data-i18n-mode="html"><strong>Description détaillée :</strong> Acquisition d'une expérience pratique en production industrielle, contrôle qualité et procédures de sécurité dans un contexte de travail de nuit.</p>
+                                        <p data-i18n="projects.p3.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </article>
+
+                        <!-- Projet 4 : TIPE Nanosatellite -->
+                        <article class="project-card" data-skills="python matlab electronique physique-theorique">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction (CubeSat)</h3>
+                                <span class="project-years">2024–2025</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p4.summary">Étude d'un système de contrôle d'orientation de nanosatellite.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p4.dates" data-i18n-mode="html"><strong>Dates :</strong> Décembre 2024 — Juillet 2025</p>
+                                <p data-i18n="projects.p4.goal" data-i18n-mode="html"><strong>Objectif :</strong> Étudier et simuler des solutions pour éviter la saturation des roues de réaction via l'utilisation de magnéto-coupleurs.</p>
+                                <p class="subaction-title" data-i18n="projects.p4.sub1.title" data-i18n-mode="html"><strong>Analyse physique</strong></p>
+                                <div class="subaction-body">
+                                    <p data-i18n="projects.p4.sub1.action1" data-i18n-mode="html"><strong>Action :</strong> Étude de la conservation du moment cinétique et modélisation du principe d'action/réaction des roues.</p>
+                                    <p data-i18n="projects.p4.sub1.action2" data-i18n-mode="html"><strong>Action :</strong> Analyse de l'interaction entre le champ magnétique terrestre et les bobines du satellite pour générer un couple de désaturation.</p>
+                                </div>
+                                <p class="subaction-title" data-i18n="projects.p4.sub2.title" data-i18n-mode="html"><strong>Calcul numérique</strong></p>
+                                <div class="subaction-body">
+                                    <p data-i18n="projects.p4.sub2.action" data-i18n-mode="html"><strong>Action :</strong> Développement d'un programme Python pour déterminer le couple que chaque magnéto-coupleur doit fournir afin de générer le couple de désaturation requis.</p>
+                                </div>
+                                <p data-i18n="projects.p4.results" data-i18n-mode="html"><strong>Résultats & apports :</strong> Validation de la stratégie de désaturation et analyse critique du modèle, avec mise en évidence des limites de l'algorithme selon le type d'orbite. Démonstration de la viabilité des magnéto-coupleurs comme solution sans consommation de carburant.</p>
+                                <p data-i18n="projects.p4.grade" data-i18n-mode="html"><strong>Note obtenue :</strong> 15,2/20 (Concours CCINP)</p>
+                                <p data-i18n="projects.p4.skills" data-i18n-mode="html"><strong>Compétences mobilisées :</strong> Mécanique du solide, Électromagnétisme, Moments cinétiques, Analyse numérique.</p>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p4.problem" data-i18n-mode="html"><strong>Problématique technique :</strong> Les perturbations orbitales (gravité, radiations solaires) saturent les roues de réaction, rendant le satellite incontrôlable. Les nanosatellites n'ayant pas de carburant, on utilise une solution utlisant le champ magnétique de la Terre. Durant toute la désaturation de la roue, le satellite doit garder un attitude (orientation) constante</p>
+                                        <p data-i18n="projects.p4.docs" data-i18n-mode="html"><strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — objectifs initiaux (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Présentation orale (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Programme Python</a></p>
+                                    </div>
+                                </details>
+                            </div>
+                        </article>
+
+                        <!-- Projet 5 : Rénovation appartement -->
+                        <article class="project-card" data-skills="travail-equipe">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartement</h3>
+                                <span class="project-years">2020–2022</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p5.summary">Rénovation et remise en état d’un appartement.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p5.role" data-i18n-mode="html"><strong>Rôle :</strong> À préciser</p>
+                                <p data-i18n="projects.p5.dates" data-i18n-mode="html"><strong>Dates :</strong> 2020–2022</p>
+                                <p data-i18n="projects.p5.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
+                                <ul class="project-actions-list">
+                                    <li data-i18n="projects.p5.action1">À préciser.</li>
+                                </ul>
+                                <p data-i18n="projects.p5.skills" data-i18n-mode="html"><strong>Compétences :</strong> Travail d'équipe</p>
+                                <p data-i18n="projects.p5.results" data-i18n-mode="html"><strong>Résultats :</strong> À préciser</p>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p5.details" data-i18n-mode="html"><strong>Description détaillée :</strong> À préciser.</p>
+                                        <p data-i18n="projects.p5.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </article>
+
+                        <!-- Projet Vide -->
+                        <article class="project-card project-card--disabled" data-skills="" data-clickable="false">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.placeholder.title">Projet à venir</h3>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.placeholder.summary">Prochain projet en préparation.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.placeholder.role" data-i18n-mode="html"><strong>Rôle :</strong> </p>
+                                <p data-i18n="projects.placeholder.dates" data-i18n-mode="html"><strong>Dates :</strong> </p>
+                                <p data-i18n="projects.placeholder.skills" data-i18n-mode="html"><strong>Compétences :</strong> </p>
+                                <p data-i18n="projects.placeholder.details" data-i18n-mode="html"><strong>Description détaillée :</strong> </p>
+                                <p data-i18n="projects.placeholder.results" data-i18n-mode="html"><strong>Résultats :</strong> </p>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="page-section">
+            <div class="projects-container">
+                <div class="projects-header">
+                    <h1 class="page-title" data-i18n="education.title">Éducation</h1>
+                    <button class="projects-reset-btn" type="button" aria-label="Réinitialiser l’ordre" data-i18n-attr="aria-label" data-i18n-attr-key="projects.reset.aria">⟲</button>
+                </div>
+                
+                <div class="flex-container">
+                    <!-- Colonne de Gauche : Diplômes / Concours -->
+                    <aside class="skills-sidebar">
+                        <h2 class="sidebar-title" data-i18n="education.sidebar.title">Diplômes / Concours</h2>
+                        <div class="skills-list">
+                            <button class="skill-filter" data-target-skill="ingenieur" data-i18n="education.sidebar.engineer">Diplôme d’ingénieur (en cours)</button>
+                            <button class="skill-filter" data-target-skill="sst" data-i18n="education.sidebar.sst">Diplôme SST</button>
+                            <button class="skill-filter" data-target-skill="ccinp" data-i18n="education.sidebar.ccinp">Concours CCINP</button>
+                            <button class="skill-filter" data-target-skill="bac" data-i18n="education.sidebar.bac">Bac général</button>
+                            <button class="skill-filter" data-target-skill="brevet" data-i18n="education.sidebar.brevet">Brevet des collèges</button>
+                        </div>
+                    </aside>
+
+                    <!-- Colonne de Droite : Parcours -->
+                    <section class="projects-list">
+                        <!-- 2025 - Auj : SupMicroTech-ENSMM -->
+                        <article class="project-card" data-skills="ingenieur sst">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="education.e1.title">SupMicroTech-ENSMM</h3>
+                                <span class="project-years">2025–Auj.</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="education.e1.summary">École d’ingénieur</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="education.e1.description" data-i18n-mode="html"><strong>Description</strong> : École d’ingénieur spécialisé en mécanique et micromécanique de précision</p>
+
+                                <details class="edu-dropdown">
+                                    <summary class="edu-year-title">
+                                        <strong data-i18n="education.e1.sem1.title">Semestre 1</strong>
+                                        <span class="edu-year-date" data-i18n="education.e1.sem1.dates">Septembre 2025–Janvier 2026</span>
+                                    </summary>
+                                    <p class="edu-info edu-info-expanded" data-i18n="education.e1.sem1.summary">Premier semestre en école d’ingénieur</p>
+                                    <ul class="edu-dropdown-list">
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block1.title">Conception & Ingénierie Mécanique</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block1.item1">Conception CAO (Creo) : Modélisation 3D, mise en plan et respect de cahiers des charges.</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block1.item2">Dimensionnement d'Éléments de Machines : Calcul et intégration de roulements, étude théorique et choix d'engrenages (réducteurs).</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block1.item3">Analyse Cinématique : Étude des mouvements et repérage technique sur plans complexes.</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block2.title">Science des Matériaux</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block2.item1">Structure de la Matière : Bases structurelles et propriétés physiques.</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block2.item2">Familles de Matériaux : Étude approfondie des métaux (métallurgie), polymères et céramiques.</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block3.title">Mathématiques Appliquées & Simulation</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block3.item1">Dynamique & Simulation (Matlab) : Modélisation de systèmes dynamiques et résolution numérique (ODE45).</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block3.item2">Analyse Numérique & Optimisation : Optimisation différentiable et méthodes de résolution.</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block3.item3">Équations aux Dérivées Partielles (EDP) : Modélisation physique (chaleur, Poisson, ondes).</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block4.title">Électronique & Systèmes</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block4.item1">Électronique Analogique : Diodes, transistors (Bipolaires, N-MOS), AOP et montages multivibrateurs.</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block4.item2">Logique Numérique : Systèmes combinatoires, séquentiels et timers (NE555).</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block5.title">Photonique</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block5.item1">Optique Physique & Géométrique : Approche matricielle, polarisation et technologie Laser.</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e1.sem1.block6.title">Langues & Communication</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block6.item1">Anglais</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block6.item2">Allemand</li>
+                                        <li class="edu-list-item" data-i18n="education.e1.sem1.block6.item3">Communication</li>
+                                    </ul>
+                                </details>
+                                <p class="edu-info edu-info-collapsed" data-i18n="education.e1.sem1.summary">Premier semestre en école d’ingénieur</p>
+                                <p data-i18n="education.e1.sst" data-i18n-mode="html"><strong>Obtention</strong> : Diplôme SST obtenu en janvier 2026</p>
+                            </div>
+                        </article>
+
+                        <!-- 2023 - 2025 : Prépa -->
+                        <article class="project-card" data-skills="prepa ccinp">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="education.e2.title">Prépa</h3>
+                                <span class="project-years">2023–2025</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="education.e2.summary">Lycée Victor Hugo</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="education.e2.description" data-i18n-mode="html"><strong>Description</strong> : Classes préparatoires</p>
+
+                                <details class="edu-dropdown">
+                                    <summary class="edu-year-title">
+                                        <strong data-i18n="education.e2.mp.title">Prépa MP (classe étoilée)</strong>
+                                        <span class="edu-year-date" data-i18n="education.e2.mp.dates">2024–2025</span>
+                                    </summary>
+                                    <p class="edu-info edu-info-expanded" data-i18n="education.e2.mp.summary">Approfondissement en mathématiques et physique</p>
+                                    <ul class="edu-dropdown-list">
+                                        <li class="edu-list-title" data-i18n="education.e2.mp.block1.title">Mathématiques</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block1.item1">Algèbre Linéaire et Bilinéaire</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block1.item2">Topologie et Analyse</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block1.item3">Séries et Intégrales (Convergence)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block1.item4">Probabilités et Statistiques</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block1.item5">Géométrie Différentielle</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp.block2.title">Physique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block2.item1">Électromagnétisme</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block2.item2">Mécanique du Solide</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block2.item3">Physique Quantique et Statistique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block2.item4">Optique Ondulatoire</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block2.item5">Thermodynamique Statistique</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp.block3.title">Sciences de l'Ingénieur (SI)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block3.item1">Systèmes Linéaires Asservis</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block3.item2">Modélisation par Graphes de Liaison</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block3.item3">Mécanique des Mécanismes (Liaisons, Torseurs)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block3.item4">Analyse de la Valeur et Conception</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp.block4.title">Informatique (Tronc Commun)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block4.item1">Algorithmique de base (Python)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block4.item2">Analyse de données et Graphes</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block4.item3">Simulation Numérique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block4.item4">Bases de Données SQL (base)</li>
+                                        <li class="edu-list-title" data-i18n="education.e2.mp.block5.title">Langues</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block5.item1">Anglais</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp.block5.item2">Français Philosophie</li>
+                                    </ul>
+                                </details>
+                                <p class="edu-info edu-info-collapsed" data-i18n="education.e2.mp.summary">Approfondissement en mathématiques et physique théorique</p>
+
+                                <details class="edu-dropdown">
+                                    <summary class="edu-year-title">
+                                        <strong data-i18n="education.e2.mp2i.title">Prépa MP2I</strong>
+                                        <span class="edu-year-date" data-i18n="education.e2.mp2i.dates">2023–2024</span>
+                                    </summary>
+                                    <p class="edu-info edu-info-expanded" data-i18n="education.e2.mp2i.summary">Mathématiques, informatique et sciences de l’ingénieur</p>
+                                    <ul class="edu-dropdown-list">
+                                        <li class="edu-list-title" data-i18n="education.e2.mp2i.block1.title">Mathématiques</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block1.item1">Algèbre Linéaire</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block1.item2">Analyse Réelle et Complexe</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block1.item3">Arithmétique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block1.item4">Probabilités Discrètes</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block1.item5">Structures Algébriques</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp2i.block2.title">Sciences de l'Ingénieur (SI)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block2.item1">Automatique (Asservissements)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block2.item2">Cinématique et Statique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block2.item3">Théorie des Systèmes</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block2.item4">Modélisation Multiphysique</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp2i.block3.title">Informatique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block3.item1">Algorithmique et Complexité</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block3.item2">Structures de Données</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block3.item3">Programmation C (base)</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block3.item4">Logique et Architecture</li>
+
+                                        <li class="edu-list-title" data-i18n="education.e2.mp2i.block4.title">Physique-Chimie</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block4.item1">Électrocinétique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block4.item2">Mécanique du Point</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block4.item3">Thermodynamique</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block4.item4">Optique Géométrique</li>
+                                        <li class="edu-list-title" data-i18n="education.e2.mp2i.block5.title">Langues</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block5.item1">Anglais</li>
+                                        <li class="edu-list-item" data-i18n="education.e2.mp2i.block5.item2">Français Philosophie</li>
+                                    </ul>
+                                </details>
+                                <p class="edu-info edu-info-collapsed" data-i18n="education.e2.mp2i.summary">Mathématiques, physique, informatique et sciences de l’ingénieur</p>
+
+                                <p data-i18n="education.e2.result" data-i18n-mode="html"><strong>Résultat</strong> : Réussite du concours CCINP des grandes écoles d'ingénieur et intégration de SupMicroTech-ENSMM</p>
+                            </div>
+                        </article>
+
+                        <!-- 2020 - 2023 : Lycée -->
+                        <article class="project-card" data-skills="lycee bac">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="education.e3.title">Lycée général</h3>
+                                <span class="project-years">2020–2023</span>
+                                <button class="toggle-details">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="education.e3.summary">Lycée Augustin Cournot</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="education.e3.description" data-i18n-mode="html"><strong>Description</strong> : Lycée général</p>
+
+                                <p class="edu-year-title" data-i18n="education.e3.year1" data-i18n-mode="html"><strong>Terminale</strong> <span class="edu-year-date">2022–2023</span></p>
+                                <p class="edu-info" data-i18n="education.e3.year1.info">Parcours général : spécialités Maths et Physique</p>
+                                <p class="edu-options" data-i18n="education.e3.year1.options">Options Maths experte et Langue européenne Anglais</p>
+
+                                <p class="edu-year-title" data-i18n="education.e3.year2" data-i18n-mode="html"><strong>Première</strong> <span class="edu-year-date">2021–2022</span></p>
+                                <p class="edu-info" data-i18n="education.e3.year2.info">Parcours général : spécialités Maths, Physique et Informatique</p>
+                                <p class="edu-options" data-i18n="education.e3.year2.options">Options Langue européenne Anglais</p>
+
+                                <p class="edu-year-title" data-i18n="education.e3.year3" data-i18n-mode="html"><strong>Seconde</strong> <span class="edu-year-date">2020–2021</span></p>
+                                <p class="edu-info" data-i18n="education.e3.year3.info">Parcours général</p>
+                                <p class="edu-options" data-i18n="education.e3.year3.options">Options TSI (Technologie et science de l'ingénieur) et Langue européenne Anglais</p>
+
+                                <p data-i18n="education.e3.result" data-i18n-mode="html"><strong>Résultat</strong> : Obtention du Baccalauréat Général spécialité Maths, Physique (et Informatique) avec option Langue européenne anglais et option Maths experte mention bien</p>
+                            </div>
+                        </article>
+
+                        <!-- À venir -->
+                        <article class="project-card project-card--disabled" data-skills="" data-clickable="false">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="education.placeholder.title">À venir</h3>
+                            </div>
+                            <p class="project-summary" data-i18n="education.placeholder.summary">À venir</p>
+                        </article>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <h1 class="hero-title" data-i18n="contact.title">ME CONTACTER</h1>
+                        <p class="hero-description" data-i18n="contact.intro">N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement échanger. Je suis toujours ouvert aux nouvelles rencontres professionnelles.</p>
+                        <p class="hero-description" data-i18n="contact.internship">Je recherche un stage de 20 à 24 semaines débutant en septembre 2026. L’objectif du stage est d’avant tout découvrir de manière approfondie le monde de l’industrie. Je préférerais être en entreprise, mais je reste ouvert à tous les stages proposés.</p>
+                        <!-- Section Contact Classique -->
+                        <div class="contact-section">
+                            <div class="contact-buttons">
+                                <a href="mailto:tom.vivian@supmicrotech.fr" target="_blank" class="contact-btn">
+                                    <span class="btn-icon">✉</span>
+                                    <span class="btn-text" data-i18n="contact.btn.email">Envoyer un Email</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/tom-vivian-467822323" target="_blank" class="contact-btn">
+                                    <span class="btn-icon">in</span>
+                                    <span class="btn-text" data-i18n="contact.btn.linkedin">Mon LinkedIn</span>
+                                </a>
+                                <a href="assets/CV_VIVIAN-Tom_FR.pdf" class="contact-btn" download data-i18n-attr="href" data-i18n-attr-key="contact.btn.cv.href">
+                                    <span class="btn-icon">⬇</span>
+                                    <span class="btn-text" data-i18n="contact.btn.cv">Télécharger mon CV</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="image-lightbox" class="image-lightbox" aria-hidden="true">
+            <button class="lightbox-close" aria-label="Fermer">×</button>
+            <img id="lightbox-img" alt="" />
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="js/particles.js"></script>
+    <script type="module" src="js/skill-orbit.js"></script>
+    <script type="module" src="js/orbit-carousel.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* ========== DARK MODE ========== */
+
+body.dark-mode {
+  --text-color: #e0e0e0;
+  --bg-color: #1a1a1a;
+  --accent-color: #64b5f6;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Ajustements spécifiques pour le dark mode */
+body.dark-mode .skill-orbit {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(224, 224, 224, 0.1);
+}
+
+body.dark-mode .skill-orbit:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(224, 224, 224, 0.2);
+}
+
+body.dark-mode .orbit-background-title {
+  color: rgba(224, 224, 224, 0.08);
+}
+
+body.dark-mode .orbit-nav {
+  color: rgba(224, 224, 224, 0.6);
+}
+
+body.dark-mode .orbit-nav:hover {
+  color: var(--text-color);
+}
+
+body.dark-mode .indicator {
+  background: rgba(224, 224, 224, 0.3);
+}
+
+body.dark-mode .indicator:hover,
+body.dark-mode .indicator.active {
+  background: var(--text-color);
+}
+
+body.dark-mode .gravity-btn {
+  background: rgba(224, 224, 224, 0.1);
+  border-color: rgba(224, 224, 224, 0.3);
+  color: var(--text-color);
+}
+
+body.dark-mode .gravity-btn:hover {
+  background: rgba(100, 181, 246, 0.3);
+  border-color: rgba(100, 181, 246, 0.6);
+  color: var(--text-color);
+}
+
+body.dark-mode .gravity-btn.active {
+  background: rgba(100, 181, 246, 0.6);
+  border-color: rgba(100, 181, 246, 0.8);
+  color: white;
+}
+
+body.dark-mode .freeze-btn {
+  background: rgba(224, 224, 224, 0.1);
+  border-color: rgba(224, 224, 224, 0.3);
+  color: var(--text-color);
+}
+
+body.dark-mode .freeze-btn:hover {
+  background: rgba(100, 181, 246, 0.3);
+  border-color: rgba(100, 181, 246, 0.6);
+  color: var(--text-color);
+}
+
+body.dark-mode .freeze-btn.active {
+  background: rgba(100, 181, 246, 0.6);
+  border-color: rgba(100, 181, 246, 0.8);
+  color: white;
+}
+
+body.dark-mode .sidebar {
+  background-color: #2a2a2a;
+  border-right-color: rgba(224, 224, 224, 0.1);
+}
+
+body.dark-mode .burger-btn-fixed span,
+body.dark-mode .burger-btn-sidebar span {
+  background-color: var(--text-color);
+}
+
+body.dark-mode .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===================================
+   DARK MODE - PAGE PROJETS
+   =================================== */
+
+body.dark-mode .skills-sidebar {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .project-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .project-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .project-card.highlighted {
+  background: rgba(100, 181, 246, 0.08);
+}
+
+body.dark-mode .skill-filter {
+  border-bottom-color: transparent;
+}
+
+body.dark-mode .skill-filter:hover {
+  border-bottom-color: rgba(224, 224, 224, 0.4);
+  background: rgba(224, 224, 224, 0.03);
+}
+
+body.dark-mode .skill-filter.active {
+  background: rgba(100, 181, 246, 0.08);
+  color: var(--text-color);
+  border-bottom-color: rgba(100, 181, 246, 0.8);
+}
+
+body.dark-mode .project-details {
+  border-top-color: rgba(224, 224, 224, 0.2);
+}
+
+/* ===================================
+   DARK MODE - PAGE CONTACT
+   =================================== */
+
+body.dark-mode .contact-btn {
+  background-color: #34495e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .contact-btn:hover {
+  background-color: #4a5f7f;
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.2);
+}
+
+body.dark-mode .job-offer-textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(224, 224, 224, 0.2);
+  color: var(--text-color);
+}
+
+body.dark-mode .job-offer-textarea:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #64b5f6;
+}
+
+body.dark-mode .job-offer-textarea::placeholder {
+  color: rgba(224, 224, 224, 0.3);
+}
+
+body.dark-mode .analyze-btn {
+  background-color: #34495e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .analyze-btn:hover:not(:disabled) {
+  background-color: #4a5f7f;
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.2);
+}
+
+body.dark-mode .progress-bar {
+  background-color: rgba(224, 224, 224, 0.1);
+}
+
+body.dark-mode .progress-fill {
+  background-color: #64b5f6;
+}
+
+body.dark-mode .results-section {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(224, 224, 224, 0.2);
+}
+
+body.dark-mode .score-container {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .score-value {
+  color: #64b5f6;
+}
+
+body.dark-mode .criterion {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(224, 224, 224, 0.1);
+}
+
+body.dark-mode .criterion-score {
+  color: #64b5f6;
+}
+
+body.dark-mode .download-cv-btn {
+  background-color: #27ae60;
+}
+
+body.dark-mode .download-cv-btn:hover {
+  background-color: #2ecc71;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
