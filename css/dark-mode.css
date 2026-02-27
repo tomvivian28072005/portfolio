@@ -109,6 +109,22 @@ body.dark-mode .project-card:hover {
   background: rgba(255, 255, 255, 0.05);
 }
 
+body.dark-mode .project-card.project-card-open:hover {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+body.dark-mode .project-card.project-card-open.highlighted:hover {
+  background: rgba(100, 181, 246, 0.08) !important;
+}
+
+body.dark-mode .project-card.project-card-open.title-hover:not(.highlighted) {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .project-card.project-card-open.title-hover.highlighted {
+  background: rgba(100, 181, 246, 0.14) !important;
+}
+
 body.dark-mode .project-card.highlighted {
   background: rgba(100, 181, 246, 0.08);
 }
@@ -118,14 +134,34 @@ body.dark-mode .skill-filter {
 }
 
 body.dark-mode .skill-filter:hover {
-  border-bottom-color: rgba(224, 224, 224, 0.4);
-  background: rgba(224, 224, 224, 0.03);
+  border-bottom-color: transparent;
+  background: transparent;
 }
 
 body.dark-mode .skill-filter.active {
-  background: rgba(100, 181, 246, 0.08);
   color: var(--text-color);
-  border-bottom-color: rgba(100, 181, 246, 0.8);
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+body.dark-mode .skill-filter.skill-hard,
+body.dark-mode .skill-filter.skill-hard:hover,
+body.dark-mode .skill-filter.skill-hard.active,
+body.dark-mode .skill-filter.skill-hard.highlighted {
+  background: transparent;
+  border-bottom-color: transparent;
+  border-left-color: rgba(200, 70, 70, 0.9);
+  color: var(--text-color);
+}
+
+body.dark-mode .skill-filter.skill-soft,
+body.dark-mode .skill-filter.skill-soft:hover,
+body.dark-mode .skill-filter.skill-soft.active,
+body.dark-mode .skill-filter.skill-soft.highlighted {
+  background: transparent;
+  border-bottom-color: transparent;
+  border-left-color: rgba(60, 150, 95, 0.9);
+  color: var(--text-color);
 }
 
 body.dark-mode .project-details {
@@ -209,3 +245,26 @@ body.dark-mode .download-cv-btn:hover {
   background-color: #2ecc71;
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
 }
+
+@media (max-width: 768px) {
+  body.dark-mode .preview-card:hover {
+    border-color: rgba(200, 200, 200, 0.3) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  body.dark-mode .preview-card:hover::before {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.85) 100%) !important;
+  }
+
+  body.dark-mode .preview-card:hover .preview-title {
+    background: rgba(44, 62, 80, 0.7) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  body.dark-mode .preview-hint {
+    display: none !important;
+  }
+}
+
+

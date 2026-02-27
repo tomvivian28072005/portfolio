@@ -15,38 +15,43 @@
 </head>
 
 <body>
-    <!-- Burger Menu (visible tout le temps) -->
-    <button id="burger-menu" class="burger-btn-fixed">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <!-- Navigation Minimaliste en Haut à Gauche -->
+    <nav id="top-nav" class="top-nav">
+        <!-- Boutons Principaux -->
+        <button class="nav-btn nav-btn-home" href="#home" data-section="home">
+            <span class="nav-icon"><img src="assets/house.svg" alt="Home" class="nav-icon-img"></span>
+            <span class="nav-label" data-i18n="nav.home">Accueil</span>
+        </button>
+        <button class="nav-btn nav-btn-projects" href="#projects" data-section="projects">
+            <span class="nav-icon"><img src="assets/workflow.svg" alt="Projects" class="nav-icon-img"></span>
+            <span class="nav-label" data-i18n="nav.projects">Projets & Expériences</span>
+        </button>
+        <button class="nav-btn nav-btn-education" href="#education" data-section="education">
+            <span class="nav-icon"><img src="assets/graduation-cap.svg" alt="Formation" class="nav-icon-img"></span>
+            <span class="nav-label" data-i18n="nav.education">Formation</span>
+        </button>
+        <button class="nav-btn nav-btn-contact" href="#contact" data-section="contact">
+            <span class="nav-icon"><img src="assets/user-round.svg" alt="Contact" class="nav-icon-img"></span>
+            <span class="nav-label" data-i18n="nav.contact">Me contacter</span>
+        </button>
 
-    <!-- Sidebar -->
-    <nav id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <button id="burger-menu-sidebar" class="burger-btn-sidebar">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="sidebar-controls">
-                <button id="theme-toggle" class="control-btn">☽</button>
-                <button id="lang-toggle" class="control-btn">FR</button>
-            </div>
+        <!-- Séparateur -->
+        <div class="nav-separator"></div>
+
+        <!-- Boutons Contrôles -->
+        <div id="lang-toggle" class="nav-btn nav-btn-lang">
+            <span class="nav-icon"><img src="assets/languages.svg" alt="Language" class="nav-icon-img" id="lang-icon"></span>
+            <span class="nav-label lang-selector">
+                <span class="lang-option" data-lang="en">EN</span>
+                <span class="lang-separator">|</span>
+                <span class="lang-option" data-lang="fr">FR</span>
+            </span>
         </div>
-        <div class="sidebar-content">
-            <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
-                <li><a href="#education" data-i18n="nav.education">Éducation</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-        </div>
+        <button id="theme-toggle" class="nav-btn nav-btn-theme">
+            <span class="nav-icon"><img src="assets/moon.svg" alt="Dark mode" class="nav-icon-img" id="theme-icon"></span>
+            <span class="nav-label" id="theme-label" data-i18n="theme.dark">Mode sombre</span>
+        </button>
     </nav>
-
-    <!-- Overlay -->
-    <div class="overlay"></div>
 
     <!-- Contenu Principal -->
     <main id="main-content">
@@ -55,53 +60,43 @@
                 <div class="hero-content">
                     <div class="hero-inner">
                         <h1 class="hero-title">VIVIAN Tom</h1>
-                        <p class="hero-description" data-i18n="hero.subtitle" data-i18n-mode="html">Je suis étudiant en école d'ingénieur à <a href="https://www.supmicrotech.fr/" target="_blank" rel="noopener">SupMicroTech-ENSMM</a> et voici mon portfolio</p>
+                        <p class="hero-description">Élève Ingénieur en 1ère année à SupMicroTech, école de Mécanique et Microtechniques</p>
                         
-                        <!-- Skill Orbit -->
-                        <div class="orbit-container">
-                            <button class="orbit-nav orbit-nav-left" id="orbit-prev">‹</button>
-                            
-                            <div id="orbit-skills" class="skill-orbit" data-section="skills" data-link="#projects">
-                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
-                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
-                                <div class="orbit-background-title" data-i18n="orbit.skills.title">Hard skills</div>
-                                <div class="skill-tag" data-i18n="orbit.skills.tag.theory">Physique théorique</div>
-                                <div class="skill-tag" data-i18n="orbit.skills.tag.python">Python</div>
-                                <div class="skill-tag" data-i18n="orbit.skills.tag.web">HTML/CSS/JavaScript</div>
-                                <div class="skill-tag" data-i18n="orbit.skills.tag.matlab">MATLAB</div>
-                            </div>
-                            
-                            
-                            <div id="orbit-projects" class="skill-orbit hidden" data-section="projects" data-link="#projects">
-                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
-                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
-                                <div class="orbit-background-title" data-i18n="orbit.projects.title" data-i18n-mode="html">Projets &<br>Expériences</div>
-                                <div class="skill-tag" data-i18n="orbit.projects.tag.portfolio">Portfolio</div>
-                                <div class="skill-tag" data-i18n="orbit.projects.tag.formula">Formula Student</div>
-                                <div class="skill-tag" data-i18n="orbit.projects.tag.tipe">TIPE</div>
-                                <div class="skill-tag" data-i18n="orbit.projects.tag.operator">Opérateur presse</div>
-                                <div class="skill-tag" data-i18n="orbit.projects.tag.renov">Rénovation</div>
-                            </div>
+                        <!-- Cases déroulables d'aperçu -->
+                        <div class="preview-sections">
+                            <!-- Case Projets -->
+                            <details class="preview-card" data-section="projects">
+                                <summary class="preview-title">
+                                    <img src="assets/workflow.svg" alt="Projects" class="preview-icon">
+                                    <span data-i18n="nav.projects">Projets & Expériences</span>
+                                </summary>
+                                <div class="preview-content">
+                                    <ul class="preview-list">
+                                        <li data-i18n="projects.p6.title">Mu Air - Conception & Fabrication d'un simulateur d'avion</li>
+                                        <li data-i18n="projects.p2.title">Mu Racing Team - Formula Student</li>
+                                        <li data-i18n="projects.p3.title">Opérateur presse à injection plastique</li>
+                                        <li data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction</li>
+                                        <li data-i18n="projects.p5.title">Rénovation appartements</li>
+                                    </ul>
+                                </div>
+                                <p class="preview-hint" data-i18n="preview.hint">→ Cliquer pour accéder à la section</p>
+                            </details>
 
-                            <div id="orbit-qualities" class="skill-orbit hidden" data-section="qualities" data-link="#projects">
-                                <button class="gravity-btn" title="Activer la gravité" data-i18n-attr="title" data-i18n-attr-key="orbit.gravity.title">⬇</button>
-                                <button class="freeze-btn" title="Fixer les éléments" data-i18n-attr="title" data-i18n-attr-key="orbit.freeze.title">⏸</button>
-                                <div class="orbit-background-title" data-i18n="orbit.qualities.title">Soft skills</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.rigorous">Rigoureux</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.curious">Curieux</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.autonomous">Autonome</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.adaptable">Adaptable</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.pm">Gestion de projet</div>
-                                <div class="skill-tag" data-i18n="orbit.qualities.tag.team">Esprit d'équipe</div>
-                            </div>
-                            
-                            <button class="orbit-nav orbit-nav-right" id="orbit-next">›</button>
-                            
-                            <div class="orbit-indicators">
-                                <span class="indicator" data-section="skills" style="opacity: 1;"></span>
-                                <span class="indicator" data-section="projects"></span>
-                                <span class="indicator" data-section="qualities"></span>
-                            </div>
+                            <!-- Case Formation -->
+                            <details class="preview-card" data-section="education">
+                                <summary class="preview-title">
+                                    <img src="assets/graduation-cap.svg" alt="Formation" class="preview-icon">
+                                    <span data-i18n="nav.education">Formation</span>
+                                </summary>
+                                <div class="preview-content">
+                                    <ul class="preview-list">
+                                        <li data-i18n="education.e1.title">SupMicroTech - École Nationale Supérieure de Mécanique et Microtechniques</li>
+                                        <li data-i18n="education.e2.title">CPGE (MP & MP2I)</li>
+                                        <li data-i18n="education.e3.title">Lycée général</li>
+                                    </ul>
+                                </div>
+                                <p class="preview-hint" data-i18n="preview.hint">→ Cliquer pour accéder à la section</p>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -110,57 +105,51 @@
 
         <section id="projects" class="page-section">
             <div class="projects-container">
-                <div class="projects-header">
-                    <h1 class="page-title" data-i18n="projects.title">Mes Expériences et Projets</h1>
-                    <button class="projects-reset-btn" type="button" aria-label="Réinitialiser l’ordre" data-i18n-attr="aria-label" data-i18n-attr-key="projects.reset.aria">⟲</button>
-                </div>
-                
                 <div class="flex-container">
                     <!-- Colonne de Gauche : Compétences -->
-                    <aside class="skills-sidebar">
-                        <h2 class="sidebar-title" data-i18n="projects.skills.title">Compétences</h2>
+                    <div class="skills-column">
+                        <h2 class="sidebar-title"><span data-i18n="projects.skills.title">Compétences</span> <span class="skills-separator-label">-</span> <span class="skills-hard-label">Hard</span><span class="skills-separator-label">/</span><span class="skills-soft-label">Soft</span></h2>
+                        <aside class="skills-sidebar">
                         <div class="skills-list">
-                            <button class="skill-filter" data-target-skill="physique-theorique" data-i18n="projects.skills.theory">Physique théorique</button>
-                            <button class="skill-filter" data-target-skill="python" data-i18n="projects.skills.python">Python</button>
-                            <button class="skill-filter" data-target-skill="html-js" data-i18n="projects.skills.web">HTML/CSS/JavaScript</button>
-                            <button class="skill-filter" data-target-skill="sourcing" data-i18n="projects.skills.sourcing">Sourcing</button>
-                            <button class="skill-filter" data-target-skill="gestion-projet" data-i18n="projects.skills.pm">Gestion de projet</button>
-                            <button class="skill-filter" data-target-skill="travail-equipe" data-i18n="projects.skills.team">Travail d'équipe</button>
-                            <button class="skill-filter" data-target-skill=""></button>
+                            <hr class="skills-separator">
+                            <p class="skills-learning-label" data-i18n="projects.skills.learning">Compétences acquises</p>
+                            <button class="skill-filter skill-hard" data-target-skill="cad-creo" data-i18n="projects.skills.cad">CAO - PTC Creo</button>
+                            <button class="skill-filter skill-hard" data-target-skill="python" data-i18n="projects.skills.python">Programmation Python</button>
+                            <button class="skill-filter skill-hard" data-target-skill="ingenierie-systeme" data-i18n="projects.skills.system">Ingénierie Système</button>
+                            <button class="skill-filter skill-soft" data-target-skill="travail-equipe" data-i18n="projects.skills.team">Travail d'équipe</button>
+                            <button class="skill-filter skill-soft" data-target-skill="rigueur-adaptabilite" data-i18n="projects.skills.rigor">Rigueur & Adaptabilité</button>
+                            <button class="skill-filter skill-soft" data-target-skill="culture-terrain" data-i18n="projects.skills.field">Culture terrain</button>
+                            <hr class="skills-separator">
+                            <p class="skills-learning-label" data-i18n="projects.skills.learning">En cours d'acquisition</p>
+                            <button class="skill-filter skill-hard" data-target-skill="production" data-i18n="projects.skills.mrp">Gestion de Production (MRP)</button>
+                            <button class="skill-filter skill-hard" data-target-skill="metrologie-industrielle" data-i18n="projects.skills.metrology">Métrologie Industrielle</button>
+                            <button class="skill-filter skill-hard" data-target-skill="cotation-iso-gps" data-i18n="projects.skills.iso">Cotation ISO / GPS</button>
+                            <button class="skill-filter skill-hard" data-target-skill="automatique-commande" data-i18n="projects.skills.control">Automatique & Commande</button>
+                            <button class="skill-filter skill-hard" data-target-skill="developpement-java" data-i18n="projects.skills.java">Développement Java</button>
+                            <button class="skill-filter skill-soft" data-target-skill="gestion-projet" data-i18n="projects.skills.pm">Gestion de Projet</button>
                         </div>
-                    </aside>
+                        </aside>
+                    </div>
 
                     <!-- Colonne de Droite : Projets -->
-                    <section class="projects-list">
-                        <!-- Projet 1 : Portfolio Web -->
-                        <article class="project-card" data-skills="html-js">
+                    <section class="projects-column">
+                        <h2 class="sidebar-title">Projets & Expériences <span class="sidebar-title-hint">- cliquer sur un projet pour voir les compétences associées</span></h2>
+                        <div class="projects-list">
+                        <!-- Projet 6 : Mu Air -->
+                        <article class="project-card" data-skills="cad-creo ingenierie-systeme travail-equipe automatique-commande gestion-projet">
                             <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.p1.title">Portfolio Interactif</h3>
-                                <span class="project-years">2026</span>
+                                <h3 class="project-title" data-i18n="projects.p6.title">Mu Air - Conception & Fabrication d'un simulateur d'avion</h3>
+                                <span class="project-years">2026–Auj</span>
                                 <button class="toggle-details">▼</button>
                             </div>
-                            <p class="project-summary" data-i18n="projects.p1.summary">Conception d’un portfolio moderne mettant en valeur les projets et compétences.</p>
+                            <p class="project-summary" data-i18n="projects.p6.summary">En attente</p>
                             <div class="project-details hidden">
-                                <p data-i18n="projects.p1.dates" data-i18n-mode="html"><strong>Dates :</strong> Février 2026 — 2 semaines</p>
-                                <p data-i18n="projects.p1.goal" data-i18n-mode="html"><strong>Objectif :</strong> Créer une vitrine interactive claire et différenciante pour présenter les projets.</p>
-                                <p data-i18n="projects.p1.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
-                                <ul class="project-actions-list">
-                                    <li data-i18n="projects.p1.action1">Conception UI/UX et structuration des pages pour une navigation fluide.</li>
-                                </ul>
-                                <p data-i18n="projects.p1.skills" data-i18n-mode="html"><strong>Compétences :</strong> HTML/CSS/JS</p>
-                                <p data-i18n="projects.p1.results" data-i18n-mode="html"><strong>Résultats :</strong> Site responsive, esthétique et performant, avec interactions cohérentes et lecture facilitée des expériences.</p>
-                                <details class="project-subdetails">
-                                    <summary data-i18n="projects.common.details">Détails</summary>
-                                    <div class="project-subdetails-content">
-                                        <p data-i18n="projects.p1.details" data-i18n-mode="html"><strong>Description détaillée :</strong> Architecture multi-pages (accueil, projets, éducation, contact), optimisation de l’expérience utilisateur, et intégration progressive d’éléments interactifs pour valoriser le contenu.</p>
-                                        <p data-i18n="projects.p1.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
-                                    </div>
-                                </details>
+                                <p data-i18n="projects.p6.dates" data-i18n-mode="html"><strong>Dates :</strong> 2026–Auj</p>
                             </div>
                         </article>
 
                         <!-- Projet 2 : Mu Racing Team -->
-                        <article class="project-card" data-skills="solidworks mecanique production html-js sourcing gestion-projet">
+                        <article class="project-card" data-skills="travail-equipe rigueur-adaptabilite gestion-projet">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p2.title">Mu Racing Team - Formula Student</h3>
                                 <span class="project-years">2025–2026</span>
@@ -226,9 +215,9 @@
                         </article>
 
                         <!-- Projet 3 : Stage Plastigray -->
-                        <article class="project-card" data-skills="production travail-equipe">
+                        <article class="project-card" data-skills="ingenierie-systeme travail-equipe rigueur-adaptabilite culture-terrain">
                             <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.p3.title">Plastigray — Opérateur presse à injection plastique</h3>
+                                <h3 class="project-title" data-i18n="projects.p3.title">Opérateur presse à injection plastique</h3>
                                 <span class="project-years">2025</span>
                                 <button class="toggle-details">▼</button>
                             </div>
@@ -255,9 +244,9 @@
                         </article>
 
                         <!-- Projet 4 : TIPE Nanosatellite -->
-                        <article class="project-card" data-skills="python matlab electronique physique-theorique">
+                        <article class="project-card" data-skills="python ingenierie-systeme gestion-projet">
                             <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction (CubeSat)</h3>
+                                <h3 class="project-title" data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction</h3>
                                 <span class="project-years">2024–2025</span>
                                 <button class="toggle-details">▼</button>
                             </div>
@@ -288,9 +277,9 @@
                         </article>
 
                         <!-- Projet 5 : Rénovation appartement -->
-                        <article class="project-card" data-skills="travail-equipe">
+                        <article class="project-card" data-skills="travail-equipe rigueur-adaptabilite culture-terrain">
                             <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartement</h3>
+                                <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartements</h3>
                                 <span class="project-years">2020–2022</span>
                                 <button class="toggle-details">▼</button>
                             </div>
@@ -314,20 +303,7 @@
                             </div>
                         </article>
 
-                        <!-- Projet Vide -->
-                        <article class="project-card project-card--disabled" data-skills="" data-clickable="false">
-                            <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.placeholder.title">Projet à venir</h3>
-                            </div>
-                            <p class="project-summary" data-i18n="projects.placeholder.summary">Prochain projet en préparation.</p>
-                            <div class="project-details hidden">
-                                <p data-i18n="projects.placeholder.role" data-i18n-mode="html"><strong>Rôle :</strong> </p>
-                                <p data-i18n="projects.placeholder.dates" data-i18n-mode="html"><strong>Dates :</strong> </p>
-                                <p data-i18n="projects.placeholder.skills" data-i18n-mode="html"><strong>Compétences :</strong> </p>
-                                <p data-i18n="projects.placeholder.details" data-i18n-mode="html"><strong>Description détaillée :</strong> </p>
-                                <p data-i18n="projects.placeholder.results" data-i18n-mode="html"><strong>Résultats :</strong> </p>
-                            </div>
-                        </article>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -335,28 +311,31 @@
 
         <section id="education" class="page-section">
             <div class="projects-container">
-                <div class="projects-header">
-                    <h1 class="page-title" data-i18n="education.title">Éducation</h1>
-                    <button class="projects-reset-btn" type="button" aria-label="Réinitialiser l’ordre" data-i18n-attr="aria-label" data-i18n-attr-key="projects.reset.aria">⟲</button>
-                </div>
-                
                 <div class="flex-container">
                     <!-- Colonne de Gauche : Diplômes / Concours -->
-                    <aside class="skills-sidebar">
-                        <h2 class="sidebar-title" data-i18n="education.sidebar.title">Diplômes / Concours</h2>
+                    <div class="skills-column">
+                        <h2 class="sidebar-title" data-i18n="education.sidebar.title">Diplômes</h2>
+                        <aside class="skills-sidebar">
                         <div class="skills-list">
+                            <hr class="skills-separator">
+                            <p class="skills-learning-label" data-i18n="projects.skills.learning">Formation scolaire</p>
                             <button class="skill-filter" data-target-skill="ingenieur" data-i18n="education.sidebar.engineer">Diplôme d’ingénieur (en cours)</button>
-                            <button class="skill-filter" data-target-skill="sst" data-i18n="education.sidebar.sst">Diplôme SST</button>
                             <button class="skill-filter" data-target-skill="ccinp" data-i18n="education.sidebar.ccinp">Concours CCINP</button>
                             <button class="skill-filter" data-target-skill="bac" data-i18n="education.sidebar.bac">Bac général</button>
                             <button class="skill-filter" data-target-skill="brevet" data-i18n="education.sidebar.brevet">Brevet des collèges</button>
+                            <hr class="skills-separator">
+                            <p class="skills-learning-label" data-i18n="education.sidebar.extra">Formation extrascolaire</p>
+                            <button class="skill-filter" data-target-skill="sst" data-i18n="education.sidebar.sst">Diplôme SST</button>
                         </div>
-                    </aside>
+                        </aside>
+                    </div>
 
                     <!-- Colonne de Droite : Parcours -->
-                    <section class="projects-list">
+                    <section class="projects-column">
+                        <h2 class="sidebar-title">Parcours <span class="sidebar-title-hint">- cliquer sur un parcours pour voir les diplômes associés</span></h2>
+                        <div class="projects-list">
                         <!-- 2025 - Auj : SupMicroTech-ENSMM -->
-                        <article class="project-card" data-skills="ingenieur sst">
+                        <article class="project-card" data-skills="ingenieur">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e1.title">SupMicroTech-ENSMM</h3>
                                 <span class="project-years">2025–Auj.</span>
@@ -401,7 +380,7 @@
                                     </ul>
                                 </details>
                                 <p class="edu-info edu-info-collapsed" data-i18n="education.e1.sem1.summary">Premier semestre en école d’ingénieur</p>
-                                <p data-i18n="education.e1.sst" data-i18n-mode="html"><strong>Obtention</strong> : Diplôme SST obtenu en janvier 2026</p>
+
                             </div>
                         </article>
 
@@ -498,7 +477,7 @@
                         </article>
 
                         <!-- 2020 - 2023 : Lycée -->
-                        <article class="project-card" data-skills="lycee bac">
+                        <article class="project-card" data-skills="bac">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e3.title">Lycée général</h3>
                                 <span class="project-years">2020–2023</span>
@@ -524,14 +503,21 @@
                             </div>
                         </article>
 
-                        <!-- À venir -->
-                        <article class="project-card project-card--disabled" data-skills="" data-clickable="false">
+                        <!-- 2016 - 2020 : Collège -->
+                        <article class="project-card" data-skills="brevet">
                             <div class="project-header">
-                                <h3 class="project-title" data-i18n="education.placeholder.title">À venir</h3>
+                                <h3 class="project-title" data-i18n="education.e4.title">Collège</h3>
+                                <span class="project-years">2016–2020</span>
+                                <button class="toggle-details">▼</button>
                             </div>
-                            <p class="project-summary" data-i18n="education.placeholder.summary">À venir</p>
+                            <p class="project-summary" data-i18n="education.e4.summary">Collège Augustin Cournot</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="education.e4.description" data-i18n-mode="html"><strong>Description</strong> : Collège général</p>
+                                <p data-i18n="education.e4.result" data-i18n-mode="html"><strong>Résultat</strong> : Obtention du Brevet des collèges avec mention très bien</p>
+                            </div>
                         </article>
 
+                        </div>
                     </section>
                 </div>
             </div>
@@ -542,8 +528,9 @@
                 <div class="hero-content">
                     <div class="hero-inner">
                         <h1 class="hero-title" data-i18n="contact.title">ME CONTACTER</h1>
-                        <p class="hero-description" data-i18n="contact.intro">N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement échanger. Je suis toujours ouvert aux nouvelles rencontres professionnelles.</p>
-                        <p class="hero-description" data-i18n="contact.internship">Je recherche un stage de 20 à 24 semaines débutant en septembre 2026. L’objectif du stage est d’avant tout découvrir de manière approfondie le monde de l’industrie. Je préférerais être en entreprise, mais je reste ouvert à tous les stages proposés.</p>
+                        <p class="hero-description" data-i18n="contact.intro">N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement pour échanger. Je suis toujours ouvert aux nouvelles rencontres professionnelles.</p>
+                        <p class="hero-description" data-i18n="contact.internship">Je recherche un stage d'ingénieur de 20 à 24 semaines débutant dès le mois d'août 2026. Mon objectif est de m'investir dans une mission qui fait le pont entre la réflexion en bureau d'études et la réalité de la production en atelier.</p>
+                        <p class="hero-description" data-i18n="contact.internship-continued">Fort d'une première expérience concrète en tant qu'opérateur de presse en milieu industriel, j'ai acquis une vision pragmatique des défis du terrain. Je souhaite mettre cette double approche au service de l'optimisation des méthodes, du pilotage de la production ou du déploiement de solutions liées à l'industrie 4.0. Je suis particulièrement motivé par les environnements innovants où la technique et l'organisation se rejoignent pour améliorer l'efficacité opérationnelle.</p>
                         <!-- Section Contact Classique -->
                         <div class="contact-section">
                             <div class="contact-buttons">

@@ -1,48 +1,55 @@
-// ========== GESTION DE LA SIDEBAR RÉTRACTABLE ==========
+// ========== GESTION DE LA NAVIGATION TOP ==========
 
-const burgerFixed = document.getElementById('burger-menu');
-const burgerSidebar = document.getElementById('burger-menu-sidebar');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.querySelector('.overlay');
+const topNav = document.getElementById('top-nav');
+const navButtons = document.querySelectorAll('.nav-btn[data-section]');
 
-// Toggle sidebar au click sur le burger en haut
-burgerFixed.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    burgerFixed.classList.toggle('active');
-    burgerFixed.classList.toggle('hidden');
-    burgerSidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-});
-
-// Toggle sidebar au click sur le burger dans la sidebar
-burgerSidebar.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    burgerFixed.classList.toggle('active');
-    burgerFixed.classList.toggle('hidden');
-    burgerSidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-});
-
-// Fermer la sidebar au click sur l'overlay
-if (overlay) {
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-        burgerFixed.classList.remove('active');
-        burgerFixed.classList.remove('hidden');
-        burgerSidebar.classList.remove('active');
-        overlay.classList.remove('active');
+// Navigation au click sur les boutons
+navButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = btn.getAttribute('data-section');
+        window.location.hash = section;
     });
-}
+});
 
-// Fermer la sidebar au click sur un lien
-const sidebarLinks = document.querySelectorAll('.sidebar a');
-sidebarLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-        burgerFixed.classList.remove('active');
-        burgerFixed.classList.remove('hidden');
-        burgerSidebar.classList.remove('active');
-        overlay.classList.remove('active');
+// ========== GESTION DES PREVIEW CARDS (HOME PAGE) ==========
+
+let previewCardsInitialized = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (previewCardsInitialized) return;
+    previewCardsInitialized = true;
+    
+    const previewCards = document.querySelectorAll('.preview-card');
+    
+    previewCards.forEach((card) => {
+        const section = card.getAttribute('data-section');
+        
+        // Cliquer n'importe où sur la carte navigue vers la section
+        card.addEventListener('click', (e) => {
+            window.location.hash = section;
+        });
+        
+        // Ouvrir la card au hover
+        card.addEventListener('mouseenter', () => {
+            // Fermer les autres cartes d'abord
+            previewCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.removeAttribute('open');
+                }
+            });
+            // Ne pas ouvrir sur les appareils tactiles
+            if (window.matchMedia("(hover: hover)").matches) {
+                card.setAttribute('open', '');
+            }
+        });
+        
+        // Fermer au hover out
+        card.addEventListener('mouseleave', () => {
+            if (window.matchMedia("(hover: hover)").matches) {
+                card.removeAttribute('open');
+            }
+        });
     });
 });
 
@@ -55,10 +62,13 @@ const langToggle = document.getElementById('lang-toggle');
 
 const i18nEn = {
     'nav.home': 'Home',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Projects & Experiences',
     'nav.education': 'Education',
-    'nav.contact': 'Contact',
+    'nav.contact': 'Contact me',
+    'theme.dark': 'Dark mode',
+    'theme.light': 'Light mode',
     'hero.subtitle': 'I am an engineering student at <a href="https://www.supmicrotech.fr/" target="_blank" rel="noopener">SupMicroTech-ENSMM</a> and this is my portfolio.',
+    'preview.hint': '→ Click to access the section',
 
     'orbit.skills.title': 'Hard skills',
     'orbit.skills.tag.design': 'Mechanical design',
@@ -67,7 +77,7 @@ const i18nEn = {
     'orbit.skills.tag.web': 'HTML/CSS/JavaScript',
     'orbit.skills.tag.matlab': 'MATLAB',
 
-    'orbit.projects.title': 'Projects &<br>Experience',
+    'orbit.projects.title': 'Projects &<br>Experiences',
     'orbit.projects.tag.portfolio': 'Portfolio',
     'orbit.projects.tag.formula': 'Formula Student',
     'orbit.projects.tag.tipe': 'TIPE',
@@ -86,13 +96,20 @@ const i18nEn = {
 
     'projects.title': 'My Experiences and Projects',
     'projects.skills.title': 'Skills',
-    'projects.skills.mechanical': 'Mechanical design',
-    'projects.skills.theory': 'Theoretical physics',
-    'projects.skills.python': 'Python',
-    'projects.skills.web': 'HTML/CSS/JavaScript',
-    'projects.skills.sourcing': 'Sourcing',
-    'projects.skills.pm': 'Project management',
+    'projects.skills.validated': 'Validated Expertise (Acquired)',
+    'projects.skills.python': 'Python Programming',
+    'projects.skills.cad': 'CAD - PTC Creo',
+    'projects.skills.system': 'Systems Engineering',
     'projects.skills.team': 'Teamwork',
+    'projects.skills.rigor': 'Rigor & Adaptability',
+    'projects.skills.field': 'Field culture',
+    'projects.skills.pm': 'Project Management',
+    'projects.skills.mrp': 'Production Management (MRP)',
+    'projects.skills.metrology': 'Industrial Metrology',
+    'projects.skills.iso': 'ISO / GPS Tolerancing',
+    'projects.skills.control': 'Automation & Control',
+    'projects.skills.java': 'Java Development',
+    'projects.skills.learning': 'In progress',
     'projects.common.details': 'Details',
     'projects.reset.aria': 'Reset order',
 
@@ -134,7 +151,7 @@ const i18nEn = {
     'projects.p2.sub3.skills': '<strong>Skills used :</strong> Web development (HTML, CSS, JavaScript), branding strategy, content management.',
     'projects.p2.sub3.site': '<strong>Website :</strong> <a href="https://tomvivian28072005.github.io/muracingteam-site/index.html" target="_blank" rel="noopener">View the site</a>',
 
-    'projects.p3.title': 'Plastigray — Plastic injection press operator',
+    'projects.p3.title': 'Plastic injection press operator',
     'projects.p3.summary': 'Summer job in plastic injection production.',
     'projects.p3.role': '<strong>Role :</strong> Injection press operator (night shift)',
     'projects.p3.dates': '<strong>Dates :</strong> July 2025 — 2 weeks',
@@ -147,7 +164,7 @@ const i18nEn = {
     'projects.p3.details': '<strong>Detailed description :</strong> Practical experience in industrial production, quality control, and safety procedures in a night-shift context.',
     'projects.p3.docs': '<strong>Documents :</strong> None for the moment.',
 
-    'projects.p4.title': 'TIPE – Reaction wheel desaturation (CubeSat)',
+    'projects.p4.title': 'TIPE – Reaction wheel desaturation',
     'projects.p4.summary': 'Study of a nanosatellite attitude control system.',
     'projects.p4.dates': '<strong>Dates :</strong> December 2024 — July 2025',
     'projects.p4.goal': '<strong>Goal :</strong> Study and simulate solutions to avoid reaction wheel saturation using magnetorquers.',
@@ -162,8 +179,8 @@ const i18nEn = {
     'projects.p4.problem': '<strong>Technical challenge :</strong> Orbital disturbances (gravity, solar radiation) saturate reaction wheels, making the satellite uncontrollable. With no fuel, nanosatellites use Earth’s magnetic field. Throughout desaturation, the satellite must maintain a constant attitude (orientation).',
     'projects.p4.docs': '<strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — initial objectives (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Python program</a>',
 
-    'projects.p5.title': 'Apartment renovation',
-    'projects.p5.summary': 'Renovation and restoration of an apartment.',
+    'projects.p5.title': 'Apartments renovation',
+    'projects.p5.summary': 'Renovation and restoration of apartments.',
     'projects.p5.role': '<strong>Role :</strong> To be defined',
     'projects.p5.dates': '<strong>Dates :</strong> To be defined',
     'projects.p5.actionsTitle': '<strong>Key actions :</strong>',
@@ -172,6 +189,10 @@ const i18nEn = {
     'projects.p5.results': '<strong>Results :</strong> To be defined',
     'projects.p5.details': '<strong>Detailed description :</strong> To be defined.',
     'projects.p5.docs': '<strong>Documents :</strong> None for the moment.',
+
+    'projects.p6.title': 'Mu Air - Design & Fabrication of an aircraft simulator',
+    'projects.p6.summary': 'Pending',
+    'projects.p6.dates': '<strong>Dates :</strong> 2026–Today',
 
     'projects.placeholder.title': 'Upcoming project',
     'projects.placeholder.summary': 'Next project in preparation.',
@@ -188,8 +209,9 @@ const i18nEn = {
     'education.sidebar.ccinp': 'CCINP competitive exam',
     'education.sidebar.bac': 'General Baccalaureate',
     'education.sidebar.brevet': 'Middle School Diploma',
+    'education.sidebar.extra': 'Extracurricular training',
 
-    'education.e1.title': 'SupMicroTech-ENSMM',
+    'education.e1.title': 'SupMicroTech - National Graduate School of Mechanics and Microtechnologies',
     'education.e1.summary': 'Engineering school',
     'education.e1.description': '<strong>Description</strong> : Engineering school specialized in precision mechanics and micromechanics',
     'education.e1.sem1.title': 'Semester 1',
@@ -217,7 +239,7 @@ const i18nEn = {
     'education.e1.sem1.block6.item3': 'Communication',
     'education.e1.sst': '<strong>Certification</strong> : SST first aid certificate obtained in January 2026',
 
-    'education.e2.title': 'Preparatory classes (CPGE)',
+    'education.e2.title': 'CPGE (MP & MP2I)',
     'education.e2.summary': 'Victor Hugo High School',
     'education.e2.description': '<strong>Description</strong> : French intensive two-year preparatory program (CPGE) for engineering school competitive exams.',
     'education.e2.mp.title': 'MP track (advanced class)',
@@ -296,12 +318,29 @@ const i18nEn = {
     'education.placeholder.summary': 'Coming soon',
 
     'contact.title': 'CONTACT ME',
-    'contact.intro': 'Feel free to contact me to discuss projects, opportunities, or simply connect. I am always open to new professional connections.',
-    'contact.internship': 'I am looking for a 20–24 week internship starting in September 2026. The goal is to discover the industrial world in depth. I would prefer a company-based internship, but I am open to any opportunity proposed.',
+    'contact.intro': 'Feel free to contact me to discuss projects, opportunities, or simply exchange. I am always open to new professional connections.',
+    'contact.internship': 'I am looking for an engineering internship of 20 to 24 weeks starting from August 2026. My objective is to invest myself in a mission that bridges the gap between design office thinking and the reality of production in the workshop.',
+    'contact.internship-continued': 'With concrete experience as a press operator in an industrial environment, I have gained a pragmatic vision of field challenges. I wish to put this dual approach at the service of optimizing methods, managing production, or deploying solutions related to Industry 4.0. I am particularly motivated by innovative environments where technique and organization come together to improve operational efficiency.',
     'contact.btn.email': 'Send an Email',
     'contact.btn.linkedin': 'My LinkedIn',
     'contact.btn.cv': 'Download my CV',
     'contact.btn.cv.href': 'assets/CV_VIVIAN-Tom_EN.pdf'
+};
+
+const updateThemeLabel = () => {
+    const themeLabel = document.getElementById('theme-label');
+    const currentLang = localStorage.getItem('lang') || 'fr';
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    if (themeLabel) {
+        if (isDark) {
+            themeLabel.textContent = currentLang === 'en' ? 'Dark mode' : 'Mode sombre';
+            themeLabel.setAttribute('data-i18n', 'theme.dark');
+        } else {
+            themeLabel.textContent = currentLang === 'en' ? 'Light mode' : 'Mode clair';
+            themeLabel.setAttribute('data-i18n', 'theme.light');
+        }
+    }
 };
 
 const applyLanguage = (lang) => {
@@ -341,26 +380,40 @@ const applyLanguage = (lang) => {
     });
 
     if (langToggle) {
-        langToggle.textContent = lang === 'en' ? 'EN' : 'FR';
+        const langOptions = langToggle.querySelectorAll('.lang-option');
+        langOptions.forEach(option => {
+            const optionLang = option.getAttribute('data-lang');
+            if (optionLang === lang) {
+                option.classList.add('active');
+            } else {
+                option.classList.remove('active');
+            }
+        });
     }
 
     document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'fr');
     localStorage.setItem('lang', lang);
+    
+    // Mettre à jour le label du thème selon la langue
+    updateThemeLabel();
 };
 
 // Charger la préférence depuis localStorage au chargement
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const savedLang = localStorage.getItem('lang');
+    const themeIcon = document.getElementById('theme-icon');
     
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const effectiveTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
     if (effectiveTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeToggle.textContent = '☀';
+        themeIcon.src = 'assets/moon.svg';
+        themeIcon.alt = 'Dark mode';
     } else {
-        themeToggle.textContent = '☽';
+        themeIcon.src = 'assets/sun.svg';
+        themeIcon.alt = 'Light mode';
     }
     
     // Déclencher un événement pour notifier particles.js
@@ -371,6 +424,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const systemLang = browserLang.startsWith('en') ? 'en' : 'fr';
     const effectiveLang = savedLang || systemLang;
     applyLanguage(effectiveLang);
+    
+    // Mettre à jour le label du thème
+    updateThemeLabel();
 });
 
 // ========== NAVIGATION SPA ==========
@@ -395,8 +451,8 @@ const initSpaNavigation = () => {
         });
 
         // Mettre à jour l'état actif de la navigation
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`);
+        document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-section') === targetId);
         });
 
         // Masquer les particules hors page d'accueil
@@ -412,27 +468,89 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Toggle Dark Mode
-themeToggle.addEventListener('click', () => {
+const themeIcon = document.getElementById('theme-icon');
+
+themeToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Sauvegarder la position de scroll pour chaque section
+    const scrollPositions = new Map();
+    document.querySelectorAll('.page-section').forEach(section => {
+        const projectsList = section.querySelector('.projects-list');
+        const skillsSidebar = section.querySelector('.skills-sidebar');
+        if (projectsList) {
+            scrollPositions.set(`${section.id}-projects`, projectsList.scrollTop);
+        }
+        if (skillsSidebar) {
+            scrollPositions.set(`${section.id}-skills`, skillsSidebar.scrollTop);
+        }
+    });
+    
     document.body.classList.toggle('dark-mode');
     
-    // Mettre à jour l'icône
+    // Mettre à jour l'icône et le label
     if (document.body.classList.contains('dark-mode')) {
-        themeToggle.textContent = '☀';
+        themeIcon.src = 'assets/moon.svg';
+        themeIcon.alt = 'Dark mode';
         localStorage.setItem('theme', 'dark');
     } else {
-        themeToggle.textContent = '☽';
+        themeIcon.src = 'assets/sun.svg';
+        themeIcon.alt = 'Light mode';
         localStorage.setItem('theme', 'light');
     }
     
+    updateThemeLabel();
+    
     // Déclencher un événement pour notifier particles.js
     window.dispatchEvent(new Event('themeChanged'));
+    
+    // Restaurer les positions de scroll
+    requestAnimationFrame(() => {
+        document.querySelectorAll('.page-section').forEach(section => {
+            const projectsList = section.querySelector('.projects-list');
+            const skillsSidebar = section.querySelector('.skills-sidebar');
+            if (projectsList) {
+                const scrollPos = scrollPositions.get(`${section.id}-projects`);
+                if (scrollPos !== undefined) projectsList.scrollTop = scrollPos;
+            }
+            if (skillsSidebar) {
+                const scrollPos = scrollPositions.get(`${section.id}-skills`);
+                if (scrollPos !== undefined) skillsSidebar.scrollTop = scrollPos;
+            }
+        });
+    });
 });
 
 if (langToggle) {
-    langToggle.addEventListener('click', () => {
-        const current = localStorage.getItem('lang') || 'fr';
-        const next = current === 'fr' ? 'en' : 'fr';
-        applyLanguage(next);
+    document.addEventListener('DOMContentLoaded', () => {
+        // Toggle langue en cliquant sur l'icône
+        langToggle.querySelector('.nav-icon')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const currentLang = localStorage.getItem('lang') || 'fr';
+            const targetLang = currentLang === 'fr' ? 'en' : 'fr';
+            
+            applyLanguage(targetLang);
+        });
+        
+        // Clic sur EN/FR
+        const langOptions = langToggle.querySelectorAll('.lang-option');
+        
+        langOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetLang = option.getAttribute('data-lang');
+                const currentLang = localStorage.getItem('lang') || 'fr';
+                
+                // Ne rien faire si on clique sur la langue déjà active
+                if (targetLang === currentLang) return;
+                
+                applyLanguage(targetLang);
+            });
+        });
     });
 }
 
