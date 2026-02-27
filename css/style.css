@@ -1849,7 +1849,21 @@ body.hide-particles #particle-canvas {
   }
   
   .skill-filter:hover {
-    transform: none;
+    transform: none !important;
+    background: transparent !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .nav-btn:hover {
+    transform: none !important;
+  }
+
+  .contact-btn:hover {
+    transform: none !important;
   }
 
   .projects-list {
@@ -1890,7 +1904,7 @@ body.hide-particles #particle-canvas {
 
   /* Regrouper les boutons de navigation à gauche */
   .nav-btn[data-section] {
-    margin-right: 6px;
+    margin-right: 2px;
     order: 1;
   }
 
@@ -1902,13 +1916,13 @@ body.hide-particles #particle-canvas {
   .nav-btn-lang {
     order: 2;
     margin-left: auto;
-    margin-right: 6px;
+    margin-right: 2px;
     min-width: auto;
   }
 
   .nav-btn-theme {
     order: 3;
-    margin-right: 12px;
+    margin-right: 4px;
   }
 
   .nav-separator {
@@ -1916,7 +1930,7 @@ body.hide-particles #particle-canvas {
   }
 
   .nav-btn {
-    padding: 8px;
+    padding: 6px;
     min-width: auto;
     flex: 0 0 auto;
   }
@@ -2034,7 +2048,17 @@ body.hide-particles #particle-canvas {
   }
   
   .skill-filter:hover {
-    transform: none;
+    transform: none !important;
+    background: transparent !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .contact-btn:hover {
+    transform: none !important;
   }
   
   .project-card {
