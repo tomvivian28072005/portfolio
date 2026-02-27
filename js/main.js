@@ -96,7 +96,6 @@ const i18nEn = {
 
     'projects.title': 'My Experiences and Projects',
     'projects.skills.title': 'Skills',
-    'projects.skills.validated': 'Validated Expertise (Acquired)',
     'projects.skills.python': 'Python Programming',
     'projects.skills.cad': 'CAD - PTC Creo',
     'projects.skills.system': 'Systems Engineering',
@@ -110,6 +109,7 @@ const i18nEn = {
     'projects.skills.control': 'Automation & Control',
     'projects.skills.java': 'Java Development',
     'projects.skills.learning': 'In progress',
+    'projects.skills.acquired': 'Validated expertise',
     'projects.common.details': 'Details',
     'projects.reset.aria': 'Reset order',
 
@@ -179,17 +179,6 @@ const i18nEn = {
     'projects.p4.problem': '<strong>Technical challenge :</strong> Orbital disturbances (gravity, solar radiation) saturate reaction wheels, making the satellite uncontrollable. With no fuel, nanosatellites use Earth’s magnetic field. Throughout desaturation, the satellite must maintain a constant attitude (orientation).',
     'projects.p4.docs': '<strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — initial objectives (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Python program</a>',
 
-    'projects.p5.title': 'Apartments renovation',
-    'projects.p5.summary': 'Renovation and restoration of apartments.',
-    'projects.p5.role': '<strong>Role :</strong> To be defined',
-    'projects.p5.dates': '<strong>Dates :</strong> To be defined',
-    'projects.p5.actionsTitle': '<strong>Key actions :</strong>',
-    'projects.p5.action1': 'To be defined.',
-    'projects.p5.skills': '<strong>Skills :</strong> Design',
-    'projects.p5.results': '<strong>Results :</strong> To be defined',
-    'projects.p5.details': '<strong>Detailed description :</strong> To be defined.',
-    'projects.p5.docs': '<strong>Documents :</strong> None for the moment.',
-
     'projects.p6.title': 'Mu Air - Design & Fabrication of an aircraft simulator',
     'projects.p6.summary': 'Pending',
     'projects.p6.dates': '<strong>Dates :</strong> 2026–Today',
@@ -204,6 +193,7 @@ const i18nEn = {
 
     'education.title': 'Education',
     'education.sidebar.title': 'Degrees / Exams',
+    'education.sidebar.academic': 'Academic training',
     'education.sidebar.engineer': 'Engineering degree (in progress)',
     'education.sidebar.sst': 'SST First Aid certificate',
     'education.sidebar.ccinp': 'CCINP competitive exam',
@@ -314,6 +304,11 @@ const i18nEn = {
     'education.e3.year3.options': 'Options: TSI (Technology & Engineering Sciences) and European English track',
     'education.e3.result': '<strong>Result</strong> : General Baccalaureate with Math, Physics (and CS) specializations, European English track and Advanced Math option, grade: very good',
 
+    'education.e4.title': 'Middle School',
+    'education.e4.summary': 'Augustin Cournot Middle School',
+    'education.e4.description': '<strong>Description</strong> : General middle school',
+    'education.e4.result': '<strong>Result</strong> : Middle School Diploma with highest honors',
+
     'education.placeholder.title': 'Coming soon',
     'education.placeholder.summary': 'Coming soon',
 
@@ -416,9 +411,6 @@ window.addEventListener('DOMContentLoaded', () => {
         themeIcon.alt = 'Light mode';
     }
     
-    // Déclencher un événement pour notifier particles.js
-    window.dispatchEvent(new Event('themeChanged'));
-
     // Appliquer la langue au chargement
     const browserLang = (navigator.language || '').toLowerCase();
     const systemLang = browserLang.startsWith('en') ? 'en' : 'fr';
@@ -455,8 +447,7 @@ const initSpaNavigation = () => {
             btn.classList.toggle('active', btn.getAttribute('data-section') === targetId);
         });
 
-        // Masquer les particules hors page d'accueil
-        document.body.classList.toggle('hide-particles', targetId !== 'home');
+
     };
 
     updateActiveSection();
@@ -500,9 +491,6 @@ themeToggle.addEventListener('click', (e) => {
     }
     
     updateThemeLabel();
-    
-    // Déclencher un événement pour notifier particles.js
-    window.dispatchEvent(new Event('themeChanged'));
     
     // Restaurer les positions de scroll
     requestAnimationFrame(() => {

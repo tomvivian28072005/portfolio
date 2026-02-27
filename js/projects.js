@@ -347,12 +347,10 @@ class ProjectsManager {
             filter.style.pointerEvents = 'auto';
         });
         
-        // Nettoyer le séparateur et le label « En cours d'acquisition »
+        // Nettoyer tous les séparateurs et labels
         if (this.skillsList) {
-            const separator = this.skillsList.querySelector('.skills-separator');
-            const learningLabel = this.skillsList.querySelector('.skills-learning-label');
-            if (separator) separator.classList.remove('is-filtered');
-            if (learningLabel) learningLabel.classList.remove('is-filtered');
+            this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.remove('is-filtered'));
+            this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.remove('is-filtered'));
         }
         
         // Nettoyer tous les projets
@@ -393,12 +391,10 @@ class ProjectsManager {
                 card.classList.remove('is-hidden');
                 card.style.pointerEvents = 'auto';
             });
-            // Retirer les classes is-filtered du séparateur et du label
+            // Retirer les classes is-filtered de tous les séparateurs et labels
             if (this.skillsList) {
-                const separator = this.skillsList.querySelector('.skills-separator');
-                const learningLabel = this.skillsList.querySelector('.skills-learning-label');
-                if (separator) separator.classList.remove('is-filtered');
-                if (learningLabel) learningLabel.classList.remove('is-filtered');
+                this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.remove('is-filtered'));
+                this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.remove('is-filtered'));
             }
             this.moveDisabledProjectsToEnd();
             return;
@@ -410,12 +406,10 @@ class ProjectsManager {
         const projectsList = this.projectsList;
         if (!projectsList) return;
 
-        // Appliquer is-filtered au séparateur et au label « En cours d'acquisition »
+        // Appliquer is-filtered à tous les séparateurs et labels
         if (this.skillsList) {
-            const separator = this.skillsList.querySelector('.skills-separator');
-            const learningLabel = this.skillsList.querySelector('.skills-learning-label');
-            if (separator) separator.classList.add('is-filtered');
-            if (learningLabel) learningLabel.classList.add('is-filtered');
+            this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.add('is-filtered'));
+            this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.add('is-filtered'));
         }
 
         this.projectCards.forEach(card => {
@@ -484,11 +478,8 @@ class ProjectsManager {
             }
         });
         
-        // Appliquer la classe is-filtered au séparateur et au label "En cours d'acquisition"
-        const separator = skillsList.querySelector('.skills-separator');
-        const learningLabel = skillsList.querySelector('.skills-learning-label');
-        if (separator) separator.classList.add('is-filtered');
-        if (learningLabel) learningLabel.classList.add('is-filtered');
+        // Garder les séparateurs et labels visibles (ne PAS ajouter is-filtered)
+        // Les catégories restent affichées
         
         // Réordonner les compétences :
         // - associées en haut de la section "acquises"
@@ -522,21 +513,32 @@ class ProjectsManager {
         const skillsList = this.skillsList;
         if (!skillsList || !this.initialSkillsChildren || !this.initialSkillsChildren.length) return;
 
-        const separator = this.initialSkillsChildren.find(child => child.classList && child.classList.contains('skills-separator')) || null;
-        const learningLabel = this.initialSkillsChildren.find(child => child.classList && child.classList.contains('skills-learning-label')) || null;
+        // Trouver tous les séparateurs et labels dans l'ordre initial
+        const separators = this.initialSkillsChildren.filter(child => child.classList && child.classList.contains('skills-separator'));
+        const labels = this.initialSkillsChildren.filter(child => child.classList && child.classList.contains('skills-learning-label'));
+
+        // Séparer les skills en 2 catégories basé sur la structure HTML d'origine
+        // Structure : sep1 → label1 → [skills acquises] → sep2 → label2 → [skills en cours]
+        const acquiredSeparator = separators[0] || null;
+        const acquiredLabel = labels[0] || null;
+        const learningSeparator = separators[1] || null;
+        const learningLabel = labels[1] || null;
 
         const acquiredSkills = [];
         const learningSkills = [];
 
-        let inLearningSection = false;
+        let section = 0; // 0 = avant tout, 1 = acquises, 2 = en cours
         this.initialSkillsChildren.forEach(child => {
-            if (child === learningLabel) {
-                inLearningSection = true;
+            if (child === acquiredLabel) {
+                section = 1;
                 return;
             }
-
+            if (child === learningLabel) {
+                section = 2;
+                return;
+            }
             if (child.classList && child.classList.contains('skill-filter')) {
-                if (inLearningSection) {
+                if (section === 2) {
                     learningSkills.push(child);
                 } else {
                     acquiredSkills.push(child);
@@ -552,9 +554,12 @@ class ProjectsManager {
         const learningTop = learningSkills.filter(isAssociated);
         const learningRest = learningSkills.filter(filter => !isAssociated(filter));
 
+        // Reconstruire le DOM dans l'ordre : sep1 → label1 → skills acquises → sep2 → label2 → skills en cours
+        if (acquiredSeparator) skillsList.appendChild(acquiredSeparator);
+        if (acquiredLabel) skillsList.appendChild(acquiredLabel);
         acquiredTop.forEach(filter => skillsList.appendChild(filter));
         acquiredRest.forEach(filter => skillsList.appendChild(filter));
-        if (separator) skillsList.appendChild(separator);
+        if (learningSeparator) skillsList.appendChild(learningSeparator);
         if (learningLabel) skillsList.appendChild(learningLabel);
         learningTop.forEach(filter => skillsList.appendChild(filter));
         learningRest.forEach(filter => skillsList.appendChild(filter));
@@ -583,10 +588,10 @@ class ProjectsManager {
         });
         
         // Retirer les classes is-filtered du séparateur et du label "En cours d'acquisition"
-        const separator = skillsList.querySelector('.skills-separator');
-        const learningLabel = skillsList.querySelector('.skills-learning-label');
-        if (separator) separator.classList.remove('is-filtered');
-        if (learningLabel) learningLabel.classList.remove('is-filtered');
+        const separators = skillsList.querySelectorAll('.skills-separator');
+        const learningLabels = skillsList.querySelectorAll('.skills-learning-label');
+        separators.forEach(s => s.classList.remove('is-filtered'));
+        learningLabels.forEach(l => l.classList.remove('is-filtered'));
         
         // Restaurer tous les enfants (boutons + ligne) dans l'ordre initial
         if (this.initialSkillsChildren) {

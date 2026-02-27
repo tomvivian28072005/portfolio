@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -18,19 +18,19 @@
     <!-- Navigation Minimaliste en Haut à Gauche -->
     <nav id="top-nav" class="top-nav">
         <!-- Boutons Principaux -->
-        <button class="nav-btn nav-btn-home" href="#home" data-section="home">
+        <button class="nav-btn nav-btn-home" data-section="home">
             <span class="nav-icon"><img src="assets/house.svg" alt="Home" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.home">Accueil</span>
         </button>
-        <button class="nav-btn nav-btn-projects" href="#projects" data-section="projects">
+        <button class="nav-btn nav-btn-projects" data-section="projects">
             <span class="nav-icon"><img src="assets/workflow.svg" alt="Projects" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.projects">Projets & Expériences</span>
         </button>
-        <button class="nav-btn nav-btn-education" href="#education" data-section="education">
+        <button class="nav-btn nav-btn-education" data-section="education">
             <span class="nav-icon"><img src="assets/graduation-cap.svg" alt="Formation" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.education">Formation</span>
         </button>
-        <button class="nav-btn nav-btn-contact" href="#contact" data-section="contact">
+        <button class="nav-btn nav-btn-contact" data-section="contact">
             <span class="nav-icon"><img src="assets/user-round.svg" alt="Contact" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.contact">Me contacter</span>
         </button>
@@ -76,7 +76,6 @@
                                         <li data-i18n="projects.p2.title">Mu Racing Team - Formula Student</li>
                                         <li data-i18n="projects.p3.title">Opérateur presse à injection plastique</li>
                                         <li data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction</li>
-                                        <li data-i18n="projects.p5.title">Rénovation appartements</li>
                                     </ul>
                                 </div>
                                 <p class="preview-hint" data-i18n="preview.hint">→ Cliquer pour accéder à la section</p>
@@ -112,7 +111,7 @@
                         <aside class="skills-sidebar">
                         <div class="skills-list">
                             <hr class="skills-separator">
-                            <p class="skills-learning-label" data-i18n="projects.skills.learning">Compétences acquises</p>
+                            <p class="skills-learning-label" data-i18n="projects.skills.acquired">Compétences acquises</p>
                             <button class="skill-filter skill-hard" data-target-skill="cad-creo" data-i18n="projects.skills.cad">CAO - PTC Creo</button>
                             <button class="skill-filter skill-hard" data-target-skill="python" data-i18n="projects.skills.python">Programmation Python</button>
                             <button class="skill-filter skill-hard" data-target-skill="ingenierie-systeme" data-i18n="projects.skills.system">Ingénierie Système</button>
@@ -269,35 +268,8 @@
                                 <details class="project-subdetails">
                                     <summary data-i18n="projects.common.details">Détails</summary>
                                     <div class="project-subdetails-content">
-                                        <p data-i18n="projects.p4.problem" data-i18n-mode="html"><strong>Problématique technique :</strong> Les perturbations orbitales (gravité, radiations solaires) saturent les roues de réaction, rendant le satellite incontrôlable. Les nanosatellites n'ayant pas de carburant, on utilise une solution utlisant le champ magnétique de la Terre. Durant toute la désaturation de la roue, le satellite doit garder un attitude (orientation) constante</p>
+                                        <p data-i18n="projects.p4.problem" data-i18n-mode="html"><strong>Problématique technique :</strong> Les perturbations orbitales (gravité, radiations solaires) saturent les roues de réaction, rendant le satellite incontrôlable. Les nanosatellites n'ayant pas de carburant, on utilise une solution utilisant le champ magnétique de la Terre. Durant toute la désaturation de la roue, le satellite doit garder un attitude (orientation) constante</p>
                                         <p data-i18n="projects.p4.docs" data-i18n-mode="html"><strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — objectifs initiaux (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Présentation orale (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Programme Python</a></p>
-                                    </div>
-                                </details>
-                            </div>
-                        </article>
-
-                        <!-- Projet 5 : Rénovation appartement -->
-                        <article class="project-card" data-skills="travail-equipe rigueur-adaptabilite culture-terrain">
-                            <div class="project-header">
-                                <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartements</h3>
-                                <span class="project-years">2020–2022</span>
-                                <button class="toggle-details">▼</button>
-                            </div>
-                            <p class="project-summary" data-i18n="projects.p5.summary">Rénovation et remise en état d’un appartement.</p>
-                            <div class="project-details hidden">
-                                <p data-i18n="projects.p5.role" data-i18n-mode="html"><strong>Rôle :</strong> À préciser</p>
-                                <p data-i18n="projects.p5.dates" data-i18n-mode="html"><strong>Dates :</strong> 2020–2022</p>
-                                <p data-i18n="projects.p5.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
-                                <ul class="project-actions-list">
-                                    <li data-i18n="projects.p5.action1">À préciser.</li>
-                                </ul>
-                                <p data-i18n="projects.p5.skills" data-i18n-mode="html"><strong>Compétences :</strong> Travail d'équipe</p>
-                                <p data-i18n="projects.p5.results" data-i18n-mode="html"><strong>Résultats :</strong> À préciser</p>
-                                <details class="project-subdetails">
-                                    <summary data-i18n="projects.common.details">Détails</summary>
-                                    <div class="project-subdetails-content">
-                                        <p data-i18n="projects.p5.details" data-i18n-mode="html"><strong>Description détaillée :</strong> À préciser.</p>
-                                        <p data-i18n="projects.p5.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
                                     </div>
                                 </details>
                             </div>
@@ -318,7 +290,7 @@
                         <aside class="skills-sidebar">
                         <div class="skills-list">
                             <hr class="skills-separator">
-                            <p class="skills-learning-label" data-i18n="projects.skills.learning">Formation scolaire</p>
+                            <p class="skills-learning-label" data-i18n="education.sidebar.academic">Formation scolaire</p>
                             <button class="skill-filter" data-target-skill="ingenieur" data-i18n="education.sidebar.engineer">Diplôme d’ingénieur (en cours)</button>
                             <button class="skill-filter" data-target-skill="ccinp" data-i18n="education.sidebar.ccinp">Concours CCINP</button>
                             <button class="skill-filter" data-target-skill="bac" data-i18n="education.sidebar.bac">Bac général</button>
@@ -335,7 +307,7 @@
                         <h2 class="sidebar-title">Parcours <span class="sidebar-title-hint">- cliquer sur un parcours pour voir les diplômes associés</span></h2>
                         <div class="projects-list">
                         <!-- 2025 - Auj : SupMicroTech-ENSMM -->
-                        <article class="project-card" data-skills="ingenieur">
+                        <article class="project-card" data-skills="ingenieur sst">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e1.title">SupMicroTech-ENSMM</h3>
                                 <span class="project-years">2025–Auj.</span>
@@ -561,7 +533,6 @@
     </main>
 
     <!-- Scripts -->
-    <script type="module" src="js/particles.js"></script>
     <script type="module" src="js/skill-orbit.js"></script>
     <script type="module" src="js/orbit-carousel.js"></script>
     <script type="module" src="js/main.js"></script>

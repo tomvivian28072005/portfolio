@@ -145,7 +145,6 @@ body.dark-mode .skill-filter.active {
 }
 
 body.dark-mode .skill-filter.skill-hard,
-body.dark-mode .skill-filter.skill-hard:hover,
 body.dark-mode .skill-filter.skill-hard.active,
 body.dark-mode .skill-filter.skill-hard.highlighted {
   background: transparent;
@@ -155,7 +154,6 @@ body.dark-mode .skill-filter.skill-hard.highlighted {
 }
 
 body.dark-mode .skill-filter.skill-soft,
-body.dark-mode .skill-filter.skill-soft:hover,
 body.dark-mode .skill-filter.skill-soft.active,
 body.dark-mode .skill-filter.skill-soft.highlighted {
   background: transparent;
