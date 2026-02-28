@@ -1612,6 +1612,182 @@ body.dark-mode .preview-hint {
   margin: 8px 0 14px;
 }
 
+/* === Blocs sous-projets === */
+.project-details .sub-project {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+
+body.dark-mode .project-details .sub-project {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-details .sub-project .subaction-title {
+  margin-top: 0;
+  font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(100, 181, 246, 0.35);
+  margin-bottom: 0;
+}
+
+.project-details .sub-project .subaction-title strong {
+  color: rgba(55, 135, 210, 0.95);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+body.dark-mode .project-details .sub-project .subaction-title strong {
+  color: rgba(100, 181, 246, 0.92);
+}
+
+.project-details .sub-project .subaction-body {
+  margin-left: 0;
+  margin-top: 6px;
+}
+
+.project-details .sub-project .subaction-body p > strong:first-child {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: rgba(55, 135, 210, 0.8);
+  display: inline-block;
+  margin-right: 2px;
+}
+
+body.dark-mode .project-details .sub-project .subaction-body p > strong:first-child {
+  color: rgba(100, 181, 246, 0.75);
+}
+
+/* Couleurs compétences hard / soft */
+.project-details .skill-tag-hard {
+  color: rgba(200, 70, 70, 0.88);
+  font-weight: 600;
+}
+
+.project-details .skill-tag-soft {
+  color: rgba(60, 150, 95, 0.88);
+  font-weight: 600;
+}
+
+/* Bouton lien externe */
+.project-details .project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 5px 13px;
+  border: 1px solid rgba(55, 135, 210, 0.45);
+  border-radius: 20px;
+  background: rgba(100, 181, 246, 0.07);
+  color: rgba(55, 135, 210, 0.95);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.project-details .project-link-btn:hover {
+  background: rgba(100, 181, 246, 0.15);
+  border-color: rgba(55, 135, 210, 0.7);
+}
+
+body.dark-mode .project-details .project-link-btn {
+  color: rgba(100, 181, 246, 0.9);
+  border-color: rgba(100, 181, 246, 0.35);
+  background: rgba(100, 181, 246, 0.07);
+}
+
+body.dark-mode .project-details .project-link-btn:hover {
+  background: rgba(100, 181, 246, 0.15);
+  border-color: rgba(100, 181, 246, 0.6);
+}
+
+.project-details .sub-project .project-inline-details {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Description école/établissement */
+.project-details .edu-school-desc {
+  font-size: 13px;
+  opacity: 0.78;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+/* Edu-dropdown dans sub-project */
+.project-details .sub-project .edu-dropdown {
+  margin-top: 0;
+}
+
+.project-details .sub-project .edu-dropdown > summary {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(100, 181, 246, 0.35);
+  width: 100%;
+}
+
+.project-details .sub-project .edu-dropdown > summary strong {
+  color: rgba(55, 135, 210, 0.95);
+}
+
+body.dark-mode .project-details .sub-project .edu-dropdown > summary strong {
+  color: rgba(100, 181, 246, 0.92);
+}
+
+/* Date dans titre sub-project (lycée/terminale etc.) */
+.project-details .sub-project .subaction-title .edu-year-date {
+  color: var(--text-color);
+  opacity: 0.55;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Rangée de boutons liens */
+.project-details .project-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.project-details .project-links-row .project-link-btn {
+  margin-top: 0;
+}
+
+/* === Contenu inline (remplace les <details>) === */
+.project-details .project-inline-details {
+  margin: 10px 0 14px;
+  padding: 10px 14px;
+  border-left: 2px solid rgba(100, 181, 246, 0.4);
+  background: rgba(100, 181, 246, 0.04);
+  border-radius: 0 6px 6px 0;
+}
+
+body.dark-mode .project-details .project-inline-details {
+  border-left-color: rgba(100, 181, 246, 0.3);
+  background: rgba(100, 181, 246, 0.07);
+}
+
+.project-details .project-inline-details p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.project-details .project-inline-details p:last-child {
+  margin-bottom: 0;
+}
+
+.project-details .project-inline-details .project-subdetails-photos {
+  margin-top: 10px;
+}
+
 .project-details .project-subdetails > summary {
   list-style: none;
   cursor: pointer;
@@ -1643,39 +1819,43 @@ body.dark-mode .preview-hint {
 }
 
 .project-details .project-subdetails-photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.project-details .project-subdetails-photos img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: zoom-in;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .project-details .project-subdetails-photos figure {
   margin: 0;
+  position: relative;
+}
+
+.project-details .project-subdetails-photos img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: zoom-in;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, z-index 0s;
+}
+
+.project-details .project-subdetails-photos img:hover {
+  transform: scale(2.2);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  z-index: 10;
 }
 
 .project-details .project-subdetails-photos figcaption {
-  margin-top: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-color);
-  opacity: 0.75;
+  display: none;
 }
 
 @media (max-width: 767px) {
-  .project-details .project-subdetails-photos {
-    grid-template-columns: 1fr;
-  }
-
   .project-details .project-subdetails-photos img {
-    height: auto;
+    width: 64px;
+    height: 64px;
   }
 }
 
