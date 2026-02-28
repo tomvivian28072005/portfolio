@@ -342,7 +342,7 @@ const i18nEn = {
     'contact.btn.email': 'Send an Email',
     'contact.btn.linkedin': 'My LinkedIn',
     'contact.btn.cv': 'Download my CV',
-    'contact.btn.cv.href': 'assets/CV_VIVIAN-Tom_EN.pdf'
+    'contact.btn.cv.href': 'assets/VIVIAN-Tom_Resume.pdf'
 };
 
 const updateThemeLabel = () => {
