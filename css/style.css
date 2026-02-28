@@ -1,3 +1,19 @@
+/* Statut diplôme en cours, colonne diplômes */
+.diplome-status {
+  font-size: 0.7em;
+  font-style: italic;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+#education .project-title[data-i18n="education.e1.title"] {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+#education .project-title-sub {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.92;
+}
 
 :root {
     --text-color: #2c3e50;
@@ -294,6 +310,9 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
   font-size: 14px;
   text-align: left;
 }
+
+/* Augmente la taille du texte uniquement pour SupMicroTech dans la section formation */
+
 
 .preview-hint {
   position: absolute;
@@ -1471,6 +1490,12 @@ body.dark-mode .preview-hint {
   color: var(--text-color);
   margin: 0;
   cursor: pointer;
+}
+
+.project-title-sub {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 .project-years {
