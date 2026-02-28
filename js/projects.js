@@ -65,13 +65,34 @@ class ProjectsManager {
             return Number.parseInt(lastYear, 10) || -Infinity;
         };
 
-        this.initialProjectsOrder = Array.from(this.projectCards).sort((a, b) => {
-            return getProjectEndYear(b) - getProjectEndYear(a);
+        // Trier les projets par date de fin, DANS chaque catégorie (principal / secondaire)
+        const children = Array.from(this.projectsList.children);
+        const sections = [];
+        let currentSection = [];
+
+        children.forEach(child => {
+            if (child.classList.contains('projects-separator')) {
+                if (currentSection.length) sections.push(currentSection);
+                currentSection = [child];
+            } else {
+                currentSection.push(child);
+            }
+        });
+        if (currentSection.length) sections.push(currentSection);
+
+        // Pour chaque section, trier uniquement les project-cards par date
+        sections.forEach(section => {
+            const cards = section.filter(el => el.classList.contains('project-card'));
+            const nonCards = section.filter(el => !el.classList.contains('project-card'));
+            cards.sort((a, b) => getProjectEndYear(b) - getProjectEndYear(a));
+            nonCards.forEach(el => this.projectsList.appendChild(el));
+            cards.forEach(el => this.projectsList.appendChild(el));
         });
 
-        this.initialProjectsOrder.forEach(card => {
-            this.projectsList.appendChild(card);
-        });
+        this.initialProjectsOrder = Array.from(this.projectCards);
+
+        // Sauvegarder TOUS les enfants de projects-list (cartes + séparateurs + labels)
+        this.initialProjectsChildren = Array.from(this.projectsList.children);
     }
 
     /**
@@ -148,9 +169,11 @@ class ProjectsManager {
         this.cleanAllClasses();
         this.resetFilters();
 
-        this.initialProjectsOrder.forEach(card => {
-            this.projectsList.appendChild(card);
-        });
+        if (this.initialProjectsChildren && this.initialProjectsChildren.length) {
+            this.initialProjectsChildren.forEach(child => {
+                this.projectsList.appendChild(child);
+            });
+        }
         this.moveDisabledProjectsToEnd();
     }
 
@@ -352,6 +375,11 @@ class ProjectsManager {
             this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.remove('is-filtered'));
             this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.remove('is-filtered'));
         }
+        // Nettoyer les séparateurs/labels de projets
+        if (this.projectsList) {
+            this.projectsList.querySelectorAll('.projects-separator').forEach(s => s.classList.remove('is-filtered'));
+            this.projectsList.querySelectorAll('.projects-category-label').forEach(l => l.classList.remove('is-filtered'));
+        }
         
         // Nettoyer tous les projets
         this.projectCards.forEach(card => {
@@ -396,6 +424,11 @@ class ProjectsManager {
                 this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.remove('is-filtered'));
                 this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.remove('is-filtered'));
             }
+            // Retirer is-filtered des séparateurs/labels de projets
+            if (this.projectsList) {
+                this.projectsList.querySelectorAll('.projects-separator').forEach(s => s.classList.remove('is-filtered'));
+                this.projectsList.querySelectorAll('.projects-category-label').forEach(l => l.classList.remove('is-filtered'));
+            }
             this.moveDisabledProjectsToEnd();
             return;
         }
@@ -406,15 +439,19 @@ class ProjectsManager {
         const projectsList = this.projectsList;
         if (!projectsList) return;
 
-        // Appliquer is-filtered à tous les séparateurs et labels
+        // Appliquer is-filtered aux séparateurs et labels (compétences)
         if (this.skillsList) {
             this.skillsList.querySelectorAll('.skills-separator').forEach(s => s.classList.add('is-filtered'));
             this.skillsList.querySelectorAll('.skills-learning-label').forEach(l => l.classList.add('is-filtered'));
         }
+        // Garder les séparateurs/labels de catégories de projets visibles
+        if (this.projectsList) {
+            this.projectsList.querySelectorAll('.projects-separator').forEach(s => s.classList.remove('is-filtered'));
+            this.projectsList.querySelectorAll('.projects-category-label').forEach(l => l.classList.remove('is-filtered'));
+        }
 
         this.projectCards.forEach(card => {
             const cardSkills = card.getAttribute('data-skills').split(' ');
-            
             if (cardSkills.includes(skill)) {
                 card.classList.remove('is-filtered');
                 card.classList.remove('dimmed');
@@ -423,18 +460,13 @@ class ProjectsManager {
                 card.style.pointerEvents = 'auto';
                 matchingProjects.push(card);
             } else {
-                card.classList.add('is-filtered');
                 card.classList.remove('highlighted');
-                card.classList.remove('is-hidden');
+                card.classList.remove('dimmed');
+                card.classList.add('is-hidden'); // hide completely
+                card.classList.remove('is-filtered');
                 card.style.pointerEvents = 'none';
                 nonMatchingProjects.push(card);
             }
-        });
-
-        // Déplacer physiquement les projets correspondants en haut du DOM
-        // On inverse l'ordre pour que le premier du tableau soit bien en haut
-        matchingProjects.reverse().forEach(card => {
-            projectsList.prepend(card);
         });
 
         this.moveDisabledProjectsToEnd();
@@ -507,6 +539,12 @@ class ProjectsManager {
                 card.style.pointerEvents = 'none';
             }
         });
+
+        // Masquer les séparateurs/labels de catégories de projets
+        if (this.projectsList) {
+            this.projectsList.querySelectorAll('.projects-separator').forEach(s => s.classList.add('is-filtered'));
+            this.projectsList.querySelectorAll('.projects-category-label').forEach(l => l.classList.add('is-filtered'));
+        }
     }
 
     reorderSkillsWithinSections(skills, matchingSkills = []) {
@@ -609,10 +647,16 @@ class ProjectsManager {
             card.style.pointerEvents = 'auto';
         });
 
-        // Remettre les projets dans l'ordre par date de fin
-        if (this.projectsList && this.initialProjectsOrder.length) {
-            this.initialProjectsOrder.forEach(card => {
-                this.projectsList.appendChild(card);
+        // Retirer is-filtered des séparateurs/labels de projets
+        if (this.projectsList) {
+            this.projectsList.querySelectorAll('.projects-separator').forEach(s => s.classList.remove('is-filtered'));
+            this.projectsList.querySelectorAll('.projects-category-label').forEach(l => l.classList.remove('is-filtered'));
+        }
+
+        // Remettre tous les enfants de projects-list dans l'ordre initial (cartes + séparateurs)
+        if (this.projectsList && this.initialProjectsChildren && this.initialProjectsChildren.length) {
+            this.initialProjectsChildren.forEach(child => {
+                this.projectsList.appendChild(child);
             });
         }
 

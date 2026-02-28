@@ -195,6 +195,13 @@ const i18nEn = {
     'projects.p5.details': '<strong>Detailed description :</strong> To be defined.',
     'projects.p5.docs': '<strong>Documents :</strong> None for the moment.',
 
+    'projects.p7.title': 'Course – CAD',
+    'projects.p7.summary': 'Learning CAD.',
+    'projects.p7.dates': '<strong>Dates :</strong> September 2025 – 2026',
+
+    'projects.category.main': 'Main projects',
+    'projects.category.secondary': 'Secondary projects',
+
     'projects.p6.title': 'Mu Air - Design & Fabrication of an aircraft simulator',
     'projects.p6.summary': 'Pending',
     'projects.p6.dates': '<strong>Dates :</strong> 2026–Today',
