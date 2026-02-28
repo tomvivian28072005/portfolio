@@ -9,6 +9,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Preload images critiques -->
+    <link rel="preload" as="image" href="assets/engineering.jpg">
+    <link rel="preload" as="image" href="assets/Supmicrotech.jpg">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dark-mode.css">
@@ -18,19 +22,19 @@
     <!-- Navigation Minimaliste en Haut à Gauche -->
     <nav id="top-nav" class="top-nav">
         <!-- Boutons Principaux -->
-        <button class="nav-btn nav-btn-home" data-section="home">
+        <button class="nav-btn nav-btn-home" data-section="home" aria-label="Accueil">
             <span class="nav-icon"><img src="assets/house.svg" alt="Home" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.home">Accueil</span>
         </button>
-        <button class="nav-btn nav-btn-projects" data-section="projects">
+        <button class="nav-btn nav-btn-projects" data-section="projects" aria-label="Projets & Expériences">
             <span class="nav-icon"><img src="assets/workflow.svg" alt="Projects" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.projects">Projets & Expériences</span>
         </button>
-        <button class="nav-btn nav-btn-education" data-section="education">
+        <button class="nav-btn nav-btn-education" data-section="education" aria-label="Formation">
             <span class="nav-icon"><img src="assets/graduation-cap.svg" alt="Formation" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.education">Formation</span>
         </button>
-        <button class="nav-btn nav-btn-contact" data-section="contact">
+        <button class="nav-btn nav-btn-contact" data-section="contact" aria-label="Me contacter">
             <span class="nav-icon"><img src="assets/user-round.svg" alt="Contact" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.contact">Me contacter</span>
         </button>
@@ -39,7 +43,7 @@
         <div class="nav-separator"></div>
 
         <!-- Boutons Contrôles -->
-        <div id="lang-toggle" class="nav-btn nav-btn-lang">
+        <div id="lang-toggle" class="nav-btn nav-btn-lang" role="button" aria-label="Changer de langue">
             <span class="nav-icon"><img src="assets/languages.svg" alt="Language" class="nav-icon-img" id="lang-icon"></span>
             <span class="nav-label lang-selector">
                 <span class="lang-option" data-lang="en">EN</span>
@@ -47,7 +51,7 @@
                 <span class="lang-option" data-lang="fr">FR</span>
             </span>
         </div>
-        <button id="theme-toggle" class="nav-btn nav-btn-theme">
+        <button id="theme-toggle" class="nav-btn nav-btn-theme" aria-label="Changer le thème">
             <span class="nav-icon"><img src="assets/moon.svg" alt="Dark mode" class="nav-icon-img" id="theme-icon"></span>
             <span class="nav-label" id="theme-label" data-i18n="theme.dark">Mode sombre</span>
         </button>
@@ -60,7 +64,7 @@
                 <div class="hero-content">
                     <div class="hero-inner">
                         <h1 class="hero-title">VIVIAN Tom</h1>
-                        <p class="hero-description">Élève Ingénieur en 1ère année à SupMicroTech, école de Mécanique et Microtechniques</p>
+                        <p class="hero-description" data-i18n="hero.subtitle" data-i18n-mode="html">Élève Ingénieur en 1ère année à <a href="https://www.supmicrotech.fr/" target="_blank" rel="noopener">SupMicroTech</a>, école de Mécanique et Microtechniques</p>
                         
                         <!-- Cases déroulables d'aperçu -->
                         <div class="preview-sections">
@@ -76,6 +80,7 @@
                                         <li data-i18n="projects.p2.title">Mu Racing Team - Formula Student</li>
                                         <li data-i18n="projects.p3.title">Opérateur presse à injection plastique</li>
                                         <li data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction</li>
+                                        <li data-i18n="projects.p5.title">Rénovation appartements</li>
                                     </ul>
                                 </div>
                                 <p class="preview-hint" data-i18n="preview.hint">→ Cliquer pour accéder à la section</p>
@@ -132,14 +137,14 @@
 
                     <!-- Colonne de Droite : Projets -->
                     <section class="projects-column">
-                        <h2 class="sidebar-title">Projets & Expériences <span class="sidebar-title-hint">- cliquer sur un projet pour voir les compétences associées</span></h2>
+                        <h2 class="sidebar-title"><span data-i18n="projects.column.title">Projets & Expériences</span> <span class="sidebar-title-hint" data-i18n="projects.column.hint">- cliquer sur un projet pour voir les compétences associées</span></h2>
                         <div class="projects-list">
                         <!-- Projet 6 : Mu Air -->
                         <article class="project-card" data-skills="cad-creo ingenierie-systeme travail-equipe automatique-commande gestion-projet">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p6.title">Mu Air - Conception & Fabrication d'un simulateur d'avion</h3>
                                 <span class="project-years">2026–Auj</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="projects.p6.summary">En attente</p>
                             <div class="project-details hidden">
@@ -152,7 +157,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p2.title">Mu Racing Team - Formula Student</h3>
                                 <span class="project-years">2025–2026</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="projects.p2.summary">Organisation interne et externe, et recherche de sponsors pour l'association de sport automobile.</p>
                             <div class="project-details hidden">
@@ -171,19 +176,19 @@
                                         <p data-i18n="projects.p2.sub1.details">Quelques images du Notion</p>
                                         <div class="project-subdetails-photos">
                                             <figure>
-                                                <img src="assets/arbre-notion.png" alt="Arborescence de la plateforme Notion" />
+                                                <img src="assets/arbre-notion.png" alt="Arborescence de la plateforme Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption1">Arborescence de la plateforme</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/accueil-notion.png" alt="Page d'accueil Notion" />
+                                                <img src="assets/accueil-notion.png" alt="Page d'accueil Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption2">Page d’accueil</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/chassis-notion.png" alt="Page de département - Châssis" />
+                                                <img src="assets/chassis-notion.png" alt="Page de département - Châssis" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption3">Page de département (Châssis)</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/centre_de_document-notion.png" alt="Centre de documents Notion" />
+                                                <img src="assets/centre_de_document-notion.png" alt="Centre de documents Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption4">Centre de documents</figcaption>
                                             </figure>
                                         </div>
@@ -218,7 +223,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p3.title">Opérateur presse à injection plastique</h3>
                                 <span class="project-years">2025</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="projects.p3.summary">Travail d'été en production de pièces plastiques par injection.</p>
                             <div class="project-details hidden">
@@ -247,7 +252,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p4.title">TIPE – Désaturation de Roue de réaction</h3>
                                 <span class="project-years">2024–2025</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="projects.p4.summary">Étude d'un système de contrôle d'orientation de nanosatellite.</p>
                             <div class="project-details hidden">
@@ -270,6 +275,33 @@
                                     <div class="project-subdetails-content">
                                         <p data-i18n="projects.p4.problem" data-i18n-mode="html"><strong>Problématique technique :</strong> Les perturbations orbitales (gravité, radiations solaires) saturent les roues de réaction, rendant le satellite incontrôlable. Les nanosatellites n'ayant pas de carburant, on utilise une solution utilisant le champ magnétique de la Terre. Durant toute la désaturation de la roue, le satellite doit garder un attitude (orientation) constante</p>
                                         <p data-i18n="projects.p4.docs" data-i18n-mode="html"><strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — objectifs initiaux (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Présentation orale (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Programme Python</a></p>
+                                    </div>
+                                </details>
+                            </div>
+                        </article>
+
+                        <!-- Projet 5 : Rénovation appartement -->
+                        <article class="project-card" data-skills="travail-equipe rigueur-adaptabilite culture-terrain">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartements</h3>
+                                <span class="project-years">2020–2022</span>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
+                            </div>
+                            <p class="project-summary" data-i18n="projects.p5.summary">Rénovation et remise en état d'un appartement.</p>
+                            <div class="project-details hidden">
+                                <p data-i18n="projects.p5.role" data-i18n-mode="html"><strong>Rôle :</strong> À préciser</p>
+                                <p data-i18n="projects.p5.dates" data-i18n-mode="html"><strong>Dates :</strong> 2020–2022</p>
+                                <p data-i18n="projects.p5.actionsTitle" data-i18n-mode="html"><strong>Actions concrètes :</strong></p>
+                                <ul class="project-actions-list">
+                                    <li data-i18n="projects.p5.action1">À préciser.</li>
+                                </ul>
+                                <p data-i18n="projects.p5.skills" data-i18n-mode="html"><strong>Compétences :</strong> Travail d'équipe</p>
+                                <p data-i18n="projects.p5.results" data-i18n-mode="html"><strong>Résultats :</strong> À préciser</p>
+                                <details class="project-subdetails">
+                                    <summary data-i18n="projects.common.details">Détails</summary>
+                                    <div class="project-subdetails-content">
+                                        <p data-i18n="projects.p5.details" data-i18n-mode="html"><strong>Description détaillée :</strong> À préciser.</p>
+                                        <p data-i18n="projects.p5.docs" data-i18n-mode="html"><strong>Documents :</strong> Aucun document pour le moment.</p>
                                     </div>
                                 </details>
                             </div>
@@ -304,14 +336,14 @@
 
                     <!-- Colonne de Droite : Parcours -->
                     <section class="projects-column">
-                        <h2 class="sidebar-title">Parcours <span class="sidebar-title-hint">- cliquer sur un parcours pour voir les diplômes associés</span></h2>
+                        <h2 class="sidebar-title"><span data-i18n="education.column.title">Parcours</span> <span class="sidebar-title-hint" data-i18n="education.column.hint">- cliquer sur un parcours pour voir les diplômes associés</span></h2>
                         <div class="projects-list">
                         <!-- 2025 - Auj : SupMicroTech-ENSMM -->
                         <article class="project-card" data-skills="ingenieur sst">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e1.title">SupMicroTech-ENSMM</h3>
                                 <span class="project-years">2025–Auj.</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="education.e1.summary">École d’ingénieur</p>
                             <div class="project-details hidden">
@@ -361,7 +393,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e2.title">Prépa</h3>
                                 <span class="project-years">2023–2025</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="education.e2.summary">Lycée Victor Hugo</p>
                             <div class="project-details hidden">
@@ -453,7 +485,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e3.title">Lycée général</h3>
                                 <span class="project-years">2020–2023</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="education.e3.summary">Lycée Augustin Cournot</p>
                             <div class="project-details hidden">
@@ -480,7 +512,7 @@
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="education.e4.title">Collège</h3>
                                 <span class="project-years">2016–2020</span>
-                                <button class="toggle-details">▼</button>
+                                <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="education.e4.summary">Collège Augustin Cournot</p>
                             <div class="project-details hidden">
@@ -532,8 +564,15 @@
         </div>
     </main>
 
+    <!-- Fallback si JavaScript désactivé -->
+    <noscript>
+        <div style="text-align:center;padding:40px;font-family:'Poppins',sans-serif;color:#2c3e50;">
+            <h1>Portfolio - Tom VIVIAN</h1>
+            <p>Ce site nécessite JavaScript pour fonctionner. Veuillez l'activer dans votre navigateur.</p>
+        </div>
+    </noscript>
+
     <!-- Scripts -->
-    <script type="module" src="js/skill-orbit.js"></script>
     <script type="module" src="js/orbit-carousel.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/projects.js"></script>

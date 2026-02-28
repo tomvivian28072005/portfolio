@@ -70,6 +70,11 @@ const i18nEn = {
     'hero.subtitle': 'I am an engineering student at <a href="https://www.supmicrotech.fr/" target="_blank" rel="noopener">SupMicroTech-ENSMM</a> and this is my portfolio.',
     'preview.hint': '→ Click to access the section',
 
+    'projects.column.title': 'Projects & Experiences',
+    'projects.column.hint': '- click a project to see associated skills',
+    'education.column.title': 'Education path',
+    'education.column.hint': '- click a path to see associated degrees',
+
     'orbit.skills.title': 'Hard skills',
     'orbit.skills.tag.design': 'Mechanical design',
     'orbit.skills.tag.theory': 'Theoretical physics',
@@ -178,6 +183,17 @@ const i18nEn = {
     'projects.p4.skills': '<strong>Skills used :</strong> Solid mechanics, Electromagnetism, Angular momentum, Numerical analysis.',
     'projects.p4.problem': '<strong>Technical challenge :</strong> Orbital disturbances (gravity, solar radiation) saturate reaction wheels, making the satellite uncontrollable. With no fuel, nanosatellites use Earth’s magnetic field. Throughout desaturation, the satellite must maintain a constant attitude (orientation).',
     'projects.p4.docs': '<strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — initial objectives (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Python program</a>',
+
+    'projects.p5.title': 'Apartments renovation',
+    'projects.p5.summary': 'Renovation and restoration of apartments.',
+    'projects.p5.role': '<strong>Role :</strong> To be defined',
+    'projects.p5.dates': '<strong>Dates :</strong> 2020–2022',
+    'projects.p5.actionsTitle': '<strong>Key actions :</strong>',
+    'projects.p5.action1': 'To be defined.',
+    'projects.p5.skills': '<strong>Skills :</strong> Teamwork',
+    'projects.p5.results': '<strong>Results :</strong> To be defined',
+    'projects.p5.details': '<strong>Detailed description :</strong> To be defined.',
+    'projects.p5.docs': '<strong>Documents :</strong> None for the moment.',
 
     'projects.p6.title': 'Mu Air - Design & Fabrication of an aircraft simulator',
     'projects.p6.summary': 'Pending',
