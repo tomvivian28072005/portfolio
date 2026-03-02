@@ -137,7 +137,7 @@ const i18nEn = {
     'projects.p2.sub1.problem': '<strong>Challenge :</strong> No centralized platform to share progress between departments.',
     'projects.p2.sub1.action': '<strong>Action :</strong> Deployment and architecture of a Notion workspace.',
     'projects.p2.sub1.result': '<strong>Result :</strong> Centralized technical documentation, real-time task tracking, improved cross-team communication.',
-    'projects.p2.sub1.skills': '<strong>Skills used :</strong> Project management, information architecture, change management.',
+    'projects.p2.sub1.skills': '<strong>Skills used :</strong> <span class="skill-tag-hard">Information architecture</span> · <span class="skill-tag-soft">Project management</span> · <span class="skill-tag-soft">Change management</span>',
     'projects.p2.sub1.details': 'Some screenshots from Notion',
     'projects.p2.sub1.caption1': 'Platform structure',
     'projects.p2.sub1.caption2': 'Home page',
@@ -146,25 +146,25 @@ const i18nEn = {
     'projects.p2.sub2.title': '<strong>Partnership & Manufacturing (Chassis)</strong>',
     'projects.p2.sub2.problem': '<strong>Challenge :</strong> Lack of internal equipment (laser cutting, tube bender) to manufacture the chassis.',
     'projects.p2.sub2.action': '<strong>Action :</strong> Active outreach and negotiation with subcontractors.',
-    'projects.p2.sub2.result': '<strong>Result :</strong> Industrial sponsorship agreement including free chassis manufacturing, yielding major budget savings.',
-    'projects.p2.sub2.skills': '<strong>Skills used :</strong> Cost optimization (sourcing), B2B negotiation.',
+    'projects.p2.sub2.result': '<strong>Result :</strong> Substantial budget savings for the team.',
+    'projects.p2.sub2.skills': '<strong>Skills used :</strong> <span class="skill-tag-hard">Sourcing</span> · <span class="skill-tag-hard">Cost optimization</span> · <span class="skill-tag-soft">B2B negotiation</span>',
     'projects.p2.sub2.details': 'In progress.',
     'projects.p2.sub3.title': '<strong>Digital Showcase (Website)</strong>',
     'projects.p2.sub3.problem': '<strong>Challenge :</strong> Need visibility to attract sponsors and present progress.',
     'projects.p2.sub3.action': '<strong>Action :</strong> Design and development of a dedicated website.',
     'projects.p2.sub3.result': '<strong>Result :</strong> Professional communication support to showcase the project and attract sponsors.',
-    'projects.p2.sub3.skills': '<strong>Skills used :</strong> Web development (HTML, CSS, JavaScript), branding strategy, content management.',
+    'projects.p2.sub3.skills': '<strong>Skills used :</strong> <span class="skill-tag-hard">HTML</span> · <span class="skill-tag-hard">CSS</span> · <span class="skill-tag-hard">JavaScript</span> · <span class="skill-tag-soft">Branding</span> · <span class="skill-tag-soft">Content management</span>',
     'projects.p2.sub3.site': '<strong>Website :</strong> <a href="https://tomvivian28072005.github.io/muracingteam-site/index.html" target="_blank" rel="noopener">View the site</a>',
 
     'projects.p3.title': 'Plastic injection press operator',
     'projects.p3.summary': 'Summer job in plastic injection production.',
     'projects.p3.role': '<strong>Role :</strong> Injection press operator (night shift)',
     'projects.p3.dates': '<strong>Dates :</strong> July 2025 — 2 weeks',
-    'projects.p3.actionsTitle': '<strong>Key actions :</strong>',
+    'projects.p3.actionsTitle': '<strong>Actions :</strong> Operating injection molding machines, monitoring production output, quality control of parts, and coordination with maintenance teams.',
     'projects.p3.action1': 'Operation of injection molding machines and production monitoring.',
     'projects.p3.action2': 'Quality control of parts and application of safety procedures.',
     'projects.p3.action3': 'Coordination with maintenance and production teams.',
-    'projects.p3.skills': '<strong>Hands-on skills :</strong> Quality Control, Safety & Procedures, Teamwork',
+    'projects.p3.skills': '<strong>Skills :</strong> <span class="skill-tag-hard">Quality control</span> · <span class="skill-tag-hard">Safety procedures</span> · <span class="skill-tag-soft">Teamwork</span> · <span class="skill-tag-soft">Field culture</span>',
     'projects.p3.results': '<strong>Results :</strong> Well-delivered work with positive feedback from the supervisor, and hands-on industrial production experience.',
     'projects.p3.details': '<strong>Detailed description :</strong> Practical experience in industrial production, quality control, and safety procedures in a night-shift context.',
     'projects.p3.docs': '<strong>Documents :</strong> None for the moment.',
@@ -180,17 +180,19 @@ const i18nEn = {
     'projects.p4.sub2.action': '<strong>Action :</strong> Development of a Python program to compute the torque each magnetorquer must produce to achieve the required desaturation torque.',
     'projects.p4.results': '<strong>Results & contributions :</strong> Validation of the desaturation strategy and critical analysis of the model, highlighting algorithm limits depending on orbit type. Demonstrated the viability of magnetorquers without fuel consumption.',
     'projects.p4.grade': '<strong>Score :</strong> 15.2/20 (CCINP competitive exam)',
-    'projects.p4.skills': '<strong>Skills used :</strong> Solid mechanics, Electromagnetism, Angular momentum, Numerical analysis.',
+    'projects.p4.sub1.skills': '<strong>Skills used :</strong> <span class="skill-tag-hard">Solid mechanics</span> · <span class="skill-tag-hard">Electromagnetism</span> · <span class="skill-tag-hard">Angular momentum</span>',
+    'projects.p4.skills': '<strong>Skills used :</strong> <span class="skill-tag-hard">Python</span> · <span class="skill-tag-hard">Numerical analysis</span> · <span class="skill-tag-soft">Project management</span>',
     'projects.p4.problem': '<strong>Technical challenge :</strong> Orbital disturbances (gravity, solar radiation) saturate reaction wheels, making the satellite uncontrollable. With no fuel, nanosatellites use Earth’s magnetic field. Throughout desaturation, the satellite must maintain a constant attitude (orientation).',
-    'projects.p4.docs': '<strong>Documents :</strong> <a href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT — initial objectives (PDF)</a> • <a href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a> • <a href="assets/Programme_python_final.py" target="_blank" rel="noopener">Python program</a>',
+    'projects.p4.docs': '<strong>Documents :</strong> <a href="assets/projects/tipe/MCOT.pdf" target="_blank" rel="noopener">MCOT — initial objectives (PDF)</a> • <a href="assets/projects/tipe/Presentation_TIPE.pdf" target="_blank" rel="noopener">Oral presentation (PDF)</a> • <a href="assets/projects/tipe/Programme_python_final.py" target="_blank" rel="noopener">Python program</a>',
 
     'projects.p5.title': 'Apartments renovation',
     'projects.p5.summary': 'Renovation and restoration of apartments.',
     'projects.p5.role': '<strong>Role :</strong> To be defined',
-    'projects.p5.dates': '<strong>Dates :</strong> 2020–2022',
-    'projects.p5.actionsTitle': '<strong>Key actions :</strong>',
-    'projects.p5.action1': 'To be defined.',
-    'projects.p5.skills': '<strong>Skills :</strong> Teamwork',
+    'projects.p5.dates': '<strong>Dates :</strong> 2021–2023',
+    'projects.p5.sub1.title': '<strong>Renovation works</strong>',
+    'projects.p5.actionsTitle': '<strong>Actions :</strong> Participated in renovation and restoration works — painting, light masonry, interior fitting.',
+    'projects.p5.skills': '<strong>Skills :</strong> <span class="skill-tag-soft">Teamwork</span> · <span class="skill-tag-soft">Rigor & Adaptability</span> · <span class="skill-tag-soft">Field culture</span>',
+    'projects.p5.photos.label': 'Work overview',
     'projects.p5.results': '<strong>Results :</strong> To be defined',
     'projects.p5.details': '<strong>Detailed description :</strong> To be defined.',
     'projects.p5.docs': '<strong>Documents :</strong> None for the moment.',
@@ -198,6 +200,9 @@ const i18nEn = {
     'projects.p7.title': 'Course – CAD',
     'projects.p7.summary': 'Learning CAD.',
     'projects.p7.dates': '<strong>Dates :</strong> September 2025 – 2026',
+    'projects.p7.sub1.title': '<strong>Learning — PTC Creo</strong>',
+    'projects.p7.sub1.context': '<strong>Context :</strong> Computer-aided design training with PTC Creo — 3D modeling, drafting, and requirements compliance.',
+    'projects.p7.sub1.skills': '<strong>Skills :</strong> <span class="skill-tag-hard">CAD — PTC Creo</span>',
 
     'projects.category.main': 'Main projects',
     'projects.category.secondary': 'Secondary projects',
@@ -205,6 +210,19 @@ const i18nEn = {
     'projects.p6.title': 'Mu Air - Design & Fabrication of an aircraft simulator',
     'projects.p6.summary': 'Pending',
     'projects.p6.dates': '<strong>Dates :</strong> 2026–Today',
+    'projects.p6.sub1.title': '<strong>Design & Fabrication — In progress</strong>',
+    'projects.p6.sub1.context': '<strong>Context :</strong> Design and fabrication of a flight simulator within the Mu Air association — project currently in development.',
+    'projects.p6.sub1.skills': '<strong>Skills :</strong> <span class="skill-tag-hard">CAD — PTC Creo</span> · <span class="skill-tag-hard">Systems engineering</span> · <span class="skill-tag-hard">Automation</span> · <span class="skill-tag-soft">Teamwork</span> · <span class="skill-tag-soft">Project management</span>',
+
+    'projects.p8.title': 'Personal Portfolio',
+    'projects.p8.summary': 'Design and development of this personal portfolio.',
+    'projects.p8.sub1.title': '<strong>Design & Development — This site</strong>',
+    'projects.p8.sub1.context': '<strong>Context :</strong> Need for a digital platform to present career path, projects and skills in a structured and professional way.',
+    'projects.p8.sub1.action': '<strong>Action :</strong> Thinking through content, design and usability — structuring information, choosing sections, highlighting projects and readability.',
+    'projects.p8.sub1.result': '<strong>Impact :</strong> Site deployed and accessible online, serving as a professional showcase.',
+    'projects.p8.sub1.skills': '<strong>Skills :</strong> <span class="skill-tag-soft">Design & UX</span> · <span class="skill-tag-soft">Information architecture</span> · <span class="skill-tag-soft">Content management</span>',
+
+    'projects.p4.docs.label': 'Project documents',
 
     'projects.placeholder.title': 'Upcoming project',
     'projects.placeholder.summary': 'Next project in preparation.',
@@ -224,7 +242,7 @@ const i18nEn = {
     'education.sidebar.brevet': 'Middle School Diploma',
     'education.sidebar.extra': 'Extracurricular training',
 
-    'education.e1.title': 'SupMicroTech - National Graduate School of Mechanics and Microtechnologies',
+    'education.e1.title': 'SupMicroTech<span class="project-title-sub"> — National Engineering Institute of Mechanics and Microtechnologies</span>',
     'education.e1.summary': 'Engineering school',
     'education.e1.description': '<strong>Description</strong> : Engineering school specialized in precision mechanics and micromechanics',
     'education.e1.sem1.title': 'Semester 1',
@@ -342,7 +360,7 @@ const i18nEn = {
     'contact.btn.email': 'Send an Email',
     'contact.btn.linkedin': 'My LinkedIn',
     'contact.btn.cv': 'Download my CV',
-    'contact.btn.cv.href': 'assets/VIVIAN-Tom_Resume.pdf'
+    'contact.btn.cv.href': 'assets/documents/VIVIAN-Tom_Resume.pdf'
 };
 
 const updateThemeLabel = () => {
@@ -427,10 +445,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (effectiveTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeIcon.src = 'assets/moon.svg';
+        themeIcon.src = 'assets/icons/moon.svg';
         themeIcon.alt = 'Dark mode';
     } else {
-        themeIcon.src = 'assets/sun.svg';
+        themeIcon.src = 'assets/icons/sun.svg';
         themeIcon.alt = 'Light mode';
     }
     
@@ -504,11 +522,11 @@ themeToggle.addEventListener('click', (e) => {
     
     // Mettre à jour l'icône et le label
     if (document.body.classList.contains('dark-mode')) {
-        themeIcon.src = 'assets/moon.svg';
+        themeIcon.src = 'assets/icons/moon.svg';
         themeIcon.alt = 'Dark mode';
         localStorage.setItem('theme', 'dark');
     } else {
-        themeIcon.src = 'assets/sun.svg';
+        themeIcon.src = 'assets/icons/sun.svg';
         themeIcon.alt = 'Light mode';
         localStorage.setItem('theme', 'light');
     }

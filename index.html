@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Tom</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Preload images critiques -->
-    <link rel="preload" as="image" href="assets/engineering.jpg">
-    <link rel="preload" as="image" href="assets/Supmicrotech.jpg">
+    <link rel="preload" as="image" href="assets/home/engineering.jpg">
+    <link rel="preload" as="image" href="assets/home/Supmicrotech.jpg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,19 +23,19 @@
     <nav id="top-nav" class="top-nav">
         <!-- Boutons Principaux -->
         <button class="nav-btn nav-btn-home" data-section="home" aria-label="Accueil">
-            <span class="nav-icon"><img src="assets/house.svg" alt="Home" class="nav-icon-img"></span>
+            <span class="nav-icon"><img src="assets/icons/house.svg" alt="Home" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.home">Accueil</span>
         </button>
         <button class="nav-btn nav-btn-projects" data-section="projects" aria-label="Projets & Expériences">
-            <span class="nav-icon"><img src="assets/workflow.svg" alt="Projects" class="nav-icon-img"></span>
+            <span class="nav-icon"><img src="assets/icons/workflow.svg" alt="Projects" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.projects">Projets & Expériences</span>
         </button>
         <button class="nav-btn nav-btn-education" data-section="education" aria-label="Formation">
-            <span class="nav-icon"><img src="assets/graduation-cap.svg" alt="Formation" class="nav-icon-img"></span>
+            <span class="nav-icon"><img src="assets/icons/graduation-cap.svg" alt="Formation" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.education">Formation</span>
         </button>
         <button class="nav-btn nav-btn-contact" data-section="contact" aria-label="Me contacter">
-            <span class="nav-icon"><img src="assets/user-round.svg" alt="Contact" class="nav-icon-img"></span>
+            <span class="nav-icon"><img src="assets/icons/user-round.svg" alt="Contact" class="nav-icon-img"></span>
             <span class="nav-label" data-i18n="nav.contact">Me contacter</span>
         </button>
 
@@ -44,7 +44,7 @@
 
         <!-- Boutons Contrôles -->
         <div id="lang-toggle" class="nav-btn nav-btn-lang" role="button" aria-label="Changer de langue">
-            <span class="nav-icon"><img src="assets/languages.svg" alt="Language" class="nav-icon-img" id="lang-icon"></span>
+            <span class="nav-icon"><img src="assets/icons/languages.svg" alt="Language" class="nav-icon-img" id="lang-icon"></span>
             <span class="nav-label lang-selector">
                 <span class="lang-option" data-lang="en">EN</span>
                 <span class="lang-separator">|</span>
@@ -52,7 +52,7 @@
             </span>
         </div>
         <button id="theme-toggle" class="nav-btn nav-btn-theme" aria-label="Changer le thème">
-            <span class="nav-icon"><img src="assets/moon.svg" alt="Dark mode" class="nav-icon-img" id="theme-icon"></span>
+            <span class="nav-icon"><img src="assets/icons/moon.svg" alt="Dark mode" class="nav-icon-img" id="theme-icon"></span>
             <span class="nav-label" id="theme-label" data-i18n="theme.dark">Mode sombre</span>
         </button>
     </nav>
@@ -71,7 +71,7 @@
                             <!-- Case Projets -->
                             <details class="preview-card" data-section="projects">
                                 <summary class="preview-title">
-                                    <img src="assets/workflow.svg" alt="Projects" class="preview-icon">
+                                    <img src="assets/icons/workflow.svg" alt="Projects" class="preview-icon">
                                     <span data-i18n="nav.projects">Projets & Expériences</span>
                                 </summary>
                                 <div class="preview-content">
@@ -90,12 +90,12 @@
                             <!-- Case Formation -->
                             <details class="preview-card" data-section="education">
                                 <summary class="preview-title">
-                                    <img src="assets/graduation-cap.svg" alt="Formation" class="preview-icon">
+                                    <img src="assets/icons/graduation-cap.svg" alt="Formation" class="preview-icon">
                                     <span data-i18n="nav.education">Formation</span>
                                 </summary>
                                 <div class="preview-content">
                                     <ul class="preview-list">
-                                        <li data-i18n="education.e1.title">SupMicroTech - École Nationale Supérieure de Mécanique et Microtechniques</li>
+                                        <li data-i18n="education.e1.title" data-i18n-mode="html">SupMicroTech - École Nationale Supérieure de Mécanique et Microtechniques</li>
                                         <li data-i18n="education.e2.title">CPGE (MP & MP2I)</li>
                                         <li data-i18n="education.e3.title">Lycée général</li>
                                     </ul>
@@ -152,10 +152,10 @@
                             <p class="project-summary" data-i18n="projects.p6.summary">En attente</p>
                             <div class="project-details hidden">
                                 <div class="sub-project">
-                                    <p class="subaction-title" data-i18n-mode="html"><strong>Conception & Fabrication — En cours</strong></p>
+                                    <p class="subaction-title" data-i18n="projects.p6.sub1.title" data-i18n-mode="html"><strong>Conception & Fabrication — En cours</strong></p>
                                     <div class="subaction-body">
-                                        <p><strong>Contexte :</strong> Conception et fabrication d'un simulateur de vol au sein de l'association Mu Air — projet en cours de développement.</p>
-                                        <p data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">CAO — PTC Creo</span> · <span class="skill-tag-hard">Ingénierie système</span> · <span class="skill-tag-hard">Automatique</span> · <span class="skill-tag-soft">Travail d'équipe</span> · <span class="skill-tag-soft">Gestion de projet</span></p>
+                                        <p data-i18n="projects.p6.sub1.context" data-i18n-mode="html"><strong>Contexte :</strong> Conception et fabrication d'un simulateur de vol au sein de l'association Mu Air — projet en cours de développement.</p>
+                                        <p data-i18n="projects.p6.sub1.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">CAO — PTC Creo</span> · <span class="skill-tag-hard">Ingénierie système</span> · <span class="skill-tag-hard">Automatique</span> · <span class="skill-tag-soft">Travail d'équipe</span> · <span class="skill-tag-soft">Gestion de projet</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -182,19 +182,19 @@
                                         <p class="project-inline-label" data-i18n="projects.p2.sub1.details">Aperçu du workspace</p>
                                         <div class="project-subdetails-photos">
                                             <figure>
-                                                <img src="assets/arbre-notion.png" alt="Arborescence de la plateforme Notion" loading="lazy" />
+                                                <img src="assets/projects/mu-racing/arbre-notion.png" alt="Arborescence de la plateforme Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption1">Arborescence de la plateforme</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/accueil-notion.png" alt="Page d’accueil Notion" loading="lazy" />
+                                                <img src="assets/projects/mu-racing/accueil-notion.png" alt="Page d’accueil Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption2">Page d’accueil</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/chassis-notion.png" alt="Page de département - Châssis" loading="lazy" />
+                                                <img src="assets/projects/mu-racing/chassis-notion.png" alt="Page de département - Châssis" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption3">Page de département (Châssis)</figcaption>
                                             </figure>
                                             <figure>
-                                                <img src="assets/centre_de_document-notion.png" alt="Centre de documents Notion" loading="lazy" />
+                                                <img src="assets/projects/mu-racing/centre_de_document-notion.png" alt="Centre de documents Notion" loading="lazy" />
                                                 <figcaption data-i18n="projects.p2.sub1.caption4">Centre de documents</figcaption>
                                             </figure>
                                         </div>
@@ -205,7 +205,7 @@
                                     <div class="subaction-body">
                                         <p data-i18n="projects.p2.sub2.problem" data-i18n-mode="html"><strong>Contexte :</strong> Sans équipements internes (découpe laser, cintreuse), la fabrication du châssis était un verrou majeur.</p>
                                         <p data-i18n="projects.p2.sub2.action" data-i18n-mode="html"><strong>Action :</strong> Prospection ciblée de sous-traitants et négociation d’un accord de mécénat industriel.</p>
-                                        <p data-i18n="projects.p2.sub2.result" data-i18n-mode="html"><strong>Impact :</strong> Fabrication gratuite du châssis obtenue via mécénat — économie substantielle sur le budget de l’équipe.</p>
+                                        <p data-i18n="projects.p2.sub2.result" data-i18n-mode="html"><strong>Impact :</strong> Économie substantielle sur le budget de l’équipe.</p>
                                         <p data-i18n="projects.p2.sub2.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">Sourcing</span> · <span class="skill-tag-hard">Optimisation des coûts</span> · <span class="skill-tag-soft">Négociation B2B</span></p>
                                     </div>
                                 </div>
@@ -267,11 +267,11 @@
                                         <p data-i18n="projects.p4.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">Python</span> · <span class="skill-tag-hard">Analyse numérique</span> · <span class="skill-tag-soft">Gestion de projet</span></p>
                                     </div>
                                     <div class="project-inline-details">
-                                        <p>Documents du projet</p>
+                                        <p data-i18n="projects.p4.docs.label">Documents du projet</p>
                                         <div class="project-links-row">
-                                            <a class="project-link-btn" href="assets/MCOT.pdf" target="_blank" rel="noopener">MCOT (PDF) ↗</a>
-                                            <a class="project-link-btn" href="assets/Presentation_TIPE.pdf" target="_blank" rel="noopener">Présentation orale ↗</a>
-                                            <a class="project-link-btn" href="assets/Programme_python_final.py" target="_blank" rel="noopener">Programme Python ↗</a>
+                                            <a class="project-link-btn" href="assets/projects/tipe/MCOT.pdf" target="_blank" rel="noopener">MCOT (PDF) ↗</a>
+                                            <a class="project-link-btn" href="assets/projects/tipe/Presentation_TIPE.pdf" target="_blank" rel="noopener">Présentation orale ↗</a>
+                                            <a class="project-link-btn" href="assets/projects/tipe/Programme_python_final.py" target="_blank" rel="noopener">Programme Python ↗</a>
                                         </div>
                                     </div>
                                 </div>
@@ -282,16 +282,37 @@
                         <article class="project-card" data-skills="travail-equipe rigueur-adaptabilite culture-terrain">
                             <div class="project-header">
                                 <h3 class="project-title" data-i18n="projects.p5.title">Rénovation appartements</h3>
-                                <span class="project-years">2020–2022</span>
+                                <span class="project-years">2021–2023</span>
                                 <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
                             <p class="project-summary" data-i18n="projects.p5.summary">Rénovation et remise en état d'un appartement.</p>
                             <div class="project-details hidden">
                                 <div class="sub-project">
-                                    <p class="subaction-title" data-i18n-mode="html"><strong>Travaux de rénovation</strong></p>
+                                    <p class="subaction-title" data-i18n="projects.p5.sub1.title" data-i18n-mode="html"><strong>Travaux de rénovation</strong></p>
                                     <div class="subaction-body">
                                         <p data-i18n="projects.p5.actionsTitle" data-i18n-mode="html"><strong>Actions :</strong> Participation aux travaux de rénovation et remise en état d'appartements — peinture, petite maçonnerie, aménagement intérieur.</p>
                                         <p data-i18n="projects.p5.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-soft">Travail d'équipe</span> · <span class="skill-tag-soft">Rigueur & Adaptabilité</span> · <span class="skill-tag-soft">Culture terrain</span></p>
+                                    </div>
+                                    <div class="project-inline-details">
+                                        <p class="project-inline-label" data-i18n="projects.p5.photos.label">Aperçu des travaux</p>
+                                        <div class="project-subdetails-photos">
+                                            <figure>
+                                                <img src="assets/projects/renovation/placo.jpg" alt="Pose du placo" loading="lazy" />
+                                                <figcaption>Pose du placo</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/projects/renovation/brut.jpg" alt="État brut avant travaux" loading="lazy" />
+                                                <figcaption>État brut</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/projects/renovation/sdb.jpg" alt="Salle de bain" loading="lazy" />
+                                                <figcaption>Salle de bain</figcaption>
+                                            </figure>
+                                            <figure>
+                                                <img src="assets/projects/renovation/cuisine.jpg" alt="Cuisine" loading="lazy" />
+                                                <figcaption>Cuisine</figcaption>
+                                            </figure>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -310,10 +331,10 @@
                             <p class="project-summary" data-i18n="projects.p7.summary">Apprentissage de la CAO.</p>
                             <div class="project-details hidden">
                                 <div class="sub-project">
-                                    <p class="subaction-title" data-i18n-mode="html"><strong>Apprentissage — PTC Creo</strong></p>
+                                    <p class="subaction-title" data-i18n="projects.p7.sub1.title" data-i18n-mode="html"><strong>Apprentissage — PTC Creo</strong></p>
                                     <div class="subaction-body">
-                                        <p><strong>Contexte :</strong> Formation en conception assistée par ordinateur avec PTC Creo — modélisation 3D, mises en plan, respect de cahiers des charges.</p>
-                                        <p data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">CAO — PTC Creo</span></p>
+                                        <p data-i18n="projects.p7.sub1.context" data-i18n-mode="html"><strong>Contexte :</strong> Formation en conception assistée par ordinateur avec PTC Creo — modélisation 3D, mises en plan, respect de cahiers des charges.</p>
+                                        <p data-i18n="projects.p7.sub1.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-hard">CAO — PTC Creo</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -322,19 +343,19 @@
                         <!-- Projet 8 : Portfolio -->
                         <article class="project-card" data-skills="rigueur-adaptabilite gestion-projet">
                             <div class="project-header">
-                                <h3 class="project-title">Portfolio personnel</h3>
+                                <h3 class="project-title" data-i18n="projects.p8.title">Portfolio personnel</h3>
                                 <span class="project-years">2025 – Auj.</span>
                                 <button class="toggle-details" aria-label="Afficher les détails">▼</button>
                             </div>
-                            <p class="project-summary">Conception et développement de ce portfolio personnel.</p>
+                            <p class="project-summary" data-i18n="projects.p8.summary">Conception et développement de ce portfolio personnel.</p>
                             <div class="project-details hidden">
                                 <div class="sub-project">
-                                    <p class="subaction-title" data-i18n-mode="html"><strong>Conception & Développement — Ce site</strong></p>
+                                    <p class="subaction-title" data-i18n="projects.p8.sub1.title" data-i18n-mode="html"><strong>Conception & Développement — Ce site</strong></p>
                                     <div class="subaction-body">
-                                        <p data-i18n-mode="html"><strong>Contexte :</strong> Besoin d'un support numérique pour présenter parcours, projets et compétences de manière structurée et professionnelle.</p>
-                                        <p data-i18n-mode="html"><strong>Action :</strong> Réflexion sur le contenu, le design et la praticité — structuration de l'information, choix des sections, mise en avant des projets et de la lisibilité.</p>
-                                        <p data-i18n-mode="html"><strong>Impact :</strong> Site déployé et accessible en ligne, servant de vitrine professionnelle.</p>
-                                        <p data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-soft">Design & UX</span> · <span class="skill-tag-soft">Architecture de l'information</span> · <span class="skill-tag-soft">Gestion de contenu</span></p>
+                                        <p data-i18n="projects.p8.sub1.context" data-i18n-mode="html"><strong>Contexte :</strong> Besoin d'un support numérique pour présenter parcours, projets et compétences de manière structurée et professionnelle.</p>
+                                        <p data-i18n="projects.p8.sub1.action" data-i18n-mode="html"><strong>Action :</strong> Réflexion sur le contenu, le design et la praticité — structuration de l'information, choix des sections, mise en avant des projets et de la lisibilité.</p>
+                                        <p data-i18n="projects.p8.sub1.result" data-i18n-mode="html"><strong>Impact :</strong> Site déployé et accessible en ligne, servant de vitrine professionnelle.</p>
+                                        <p data-i18n="projects.p8.sub1.skills" data-i18n-mode="html"><strong>Compétences :</strong> <span class="skill-tag-soft">Design & UX</span> · <span class="skill-tag-soft">Architecture de l'information</span> · <span class="skill-tag-soft">Gestion de contenu</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -627,7 +648,7 @@
                                     <span class="btn-icon">in</span>
                                     <span class="btn-text" data-i18n="contact.btn.linkedin">Mon LinkedIn</span>
                                 </a>
-                                <a href="assets/CV_Tom_VIVIAN.pdf" class="contact-btn" download data-i18n-attr="href" data-i18n-attr-key="contact.btn.cv.href">
+                                <a href="assets/documents/CV_Tom_VIVIAN.pdf" class="contact-btn" download data-i18n-attr="href" data-i18n-attr-key="contact.btn.cv.href">
                                     <span class="btn-icon">⬇</span>
                                     <span class="btn-text" data-i18n="contact.btn.cv">Télécharger mon CV</span>
                                 </a>

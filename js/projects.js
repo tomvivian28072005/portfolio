@@ -327,6 +327,7 @@ class ProjectsManager {
             if (e.target.closest('.skill-filter')) return;
             if (e.target.closest('.toggle-details')) return;
             if (e.target.closest('.projects-reset-btn')) return;
+            if (e.target.closest('.top-nav')) return;
 
             // Si on clique en dehors de ces éléments, désélectionner tout
             // Fermer tous les détails ouverts
