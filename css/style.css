@@ -1292,6 +1292,37 @@ body.dark-mode .preview-hint {
   opacity: 0.2;
 }
 
+/* Détail des compétences (visible sur grands écrans quand actif) */
+.skill-detail {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .skill-filter {
+    text-align: left;
+  }
+
+  .skill-detail {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.25s ease;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-top: 0;
+    pointer-events: none;
+  }
+
+  .skill-filter.active .skill-detail {
+    opacity: 0.75;
+    max-height: 60px;
+    margin-top: 4px;
+  }
+}
+
 /* Colonne de droite : Projets */
 .projects-column {
   flex: 1;
@@ -1465,7 +1496,8 @@ body.dark-mode .preview-hint {
   transition: opacity 0.4s ease;
 }
 
-.project-card.is-hidden {
+.project-card.is-hidden,
+.skill-filter.is-hidden {
   display: none !important;
 }
 

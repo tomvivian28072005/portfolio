@@ -102,17 +102,29 @@ const i18nEn = {
     'projects.title': 'My Experiences and Projects',
     'projects.skills.title': 'Skills',
     'projects.skills.python': 'Python Programming',
+    'projects.skills.python.detail': 'Algorithms · Numerical simulation · Data analysis · Scientific libraries',
     'projects.skills.cad': 'CAD - PTC Creo',
+    'projects.skills.cad.detail': '3D modeling · Assemblies · Technical drawings · Documentation',
     'projects.skills.system': 'Systems Engineering',
+    'projects.skills.system.detail': 'Functional analysis · System architecture · Interface management · Requirements',
     'projects.skills.team': 'Teamwork',
+    'projects.skills.team.detail': 'Cross-disciplinary collaboration · Communication · Team cohesion',
     'projects.skills.rigor': 'Rigor & Adaptability',
+    'projects.skills.rigor.detail': 'Accuracy · Methodical approach · Handling uncertainty',
     'projects.skills.field': 'Field culture',
+    'projects.skills.field.detail': 'Industrial production · Ground-level reality · Night shifts',
     'projects.skills.pm': 'Project Management',
+    'projects.skills.pm.detail': 'Planning · Progress tracking · Team coordination · Collaborative tools',
     'projects.skills.mrp': 'Production Management (MRP)',
+    'projects.skills.mrp.detail': 'MRP / MRP II · Inventory management · Scheduling · Production flows',
     'projects.skills.metrology': 'Industrial Metrology',
+    'projects.skills.metrology.detail': 'Measurement uncertainties · Geometric control · Design of experiments · Surface finish',
     'projects.skills.iso': 'ISO / GPS Tolerancing',
+    'projects.skills.iso.detail': 'Dimensional specs · Geometric specs · Form and position tolerances',
     'projects.skills.control': 'Automation & Control',
+    'projects.skills.control.detail': 'Laplace · Transfer functions · Stability · Digital controllers',
     'projects.skills.java': 'Java Development',
+    'projects.skills.java.detail': 'OOP · Data structures · Advanced algorithms · GUI (Swing)',
     'projects.skills.learning': 'In progress',
     'projects.skills.acquired': 'Validated expertise',
     'projects.common.details': 'Details',
@@ -239,36 +251,63 @@ const i18nEn = {
     'education.sidebar.sst': 'SST First Aid certificate',
     'education.sidebar.ccinp': 'CCINP competitive exam',
     'education.sidebar.bac': 'General Baccalaureate',
-    'education.sidebar.brevet': 'Middle School Diploma',
     'education.sidebar.extra': 'Extracurricular training',
 
     'education.e1.title': 'SupMicroTech<span class="project-title-sub"> — National Engineering Institute of Mechanics and Microtechnologies</span>',
     'education.e1.summary': 'Engineering school',
     'education.e1.description': '<strong>Description</strong> : Engineering school specialized in precision mechanics and micromechanics',
+    'education.e1.sem2.title': 'Semester 2',
+    'education.e1.sem2.dates': 'Feb. 2026 – Jul. 2026',
+    'education.e1.sem2.info': 'Blue Semester — 461h · 30 ECTS · 5 UE',
+    'education.e1.sem2.summary': 'Blue Semester — second semester',
+    'education.e1.sem2.block1.title': 'Automation & Control (AUT1 — 60h)',
+    'education.e1.sem2.block1.item1': 'Continuous control: Laplace, transfer functions (1st/2nd order), stability, accuracy, frequency synthesis.',
+    'education.e1.sem2.block1.item2': 'Discrete control: z-transform, DAC/ADC converters, zero-order holds, digital controllers (RST, Zdan, step response).',
+    'education.e1.sem2.block2.title': 'Manufacturing & Metrology (FAB1 — 75h)',
+    'education.e1.sem2.block2.item1': 'GPS tolerancing: dimensional, geometric, form specifications and surface finish.',
+    'education.e1.sem2.block2.item2': 'Manufacturing processes: milling, turning, plastic injection, additive manufacturing.',
+    'education.e1.sem2.block2.item3': 'Metrology & Quality: uncertainties, design of experiments, geometric control and surface finish.',
+    'education.e1.sem2.block3.title': 'Production Management (PROD1 — 30h)',
+    'education.e1.sem2.block3.item1': 'MRP / MRP II, inventory management, forecasting models, decision levels.',
+    'education.e1.sem2.block3.item2': 'Workshop layout, scheduling, data management and production flows.',
+    'education.e1.sem2.block4.title': 'Continuum Mechanics (MMC1 + MMC2 — 74h)',
+    'education.e1.sem2.block4.item1': 'MMC1 — 3D Elasticity: stress, strain, FEM, digital image correlation, extensometry.',
+    'education.e1.sem2.block4.item2': 'MMC2 — Structures: beams in tension, torsion and bending (Bernoulli/Timoshenko), dynamics, buckling.',
+    'education.e1.sem2.block5.title': 'Mathematics & Signal Processing (MATH1 + TS1 — 76h)',
+    'education.e1.sem2.block5.item1': 'Statistical data analysis: probabilities, hypothesis testing, design of experiments, reliability (Weibull).',
+    'education.e1.sem2.block5.item2': 'Matrix and vector calculus: eigenvalues, differential operators, multiple integrals.',
+    'education.e1.sem2.block5.item3': 'Signal processing: Fourier, digital filtering, image processing, deconvolution.',
+    'education.e1.sem2.block6.title': 'Computer Science — OOP Java (INFO1 — 60h)',
+    'education.e1.sem2.block6.item1': 'OOP fundamentals: objects, classes, sequential data structures (ArrayList), file I/O.',
+    'education.e1.sem2.block6.item2': 'Pair project: advanced algorithms (graphs, trees, recursion), Swing graphical interface.',
+    'education.e1.sem2.block7.title': 'Languages & Humanities (LV1 + SHS1 — 86h)',
+    'education.e1.sem2.block7.item1': 'English: LINGUASKILL preparation, engineering English, technical interviews and presentations.',
+    'education.e1.sem2.block7.item2': 'German (LV2)',
+    'education.e1.sem2.block7.item3': 'SHS: Organizational law, financial management (balance sheet, income statement, financial analysis).',
+
     'education.e1.sem1.title': 'Semester 1',
-    'education.e1.sem1.dates': 'September 2025–January 2026',
-    'education.e1.sem1.summary': 'First semester in engineering school',
-    'education.e1.sem1.block1.title': 'Mechanical Design & Engineering',
-    'education.e1.sem1.block1.item1': 'CAD Design (Creo): 3D modeling, drafting, and requirements compliance.',
-    'education.e1.sem1.block1.item2': 'Machine element sizing: bearing calculations/integration and gear selection.',
-    'education.e1.sem1.block1.item3': 'Kinematic analysis: study of motions and technical reading of complex drawings.',
-    'education.e1.sem1.block2.title': 'Materials Science',
-    'education.e1.sem1.block2.item1': 'Structure of matter: structural basics and physical properties.',
-    'education.e1.sem1.block2.item2': 'Material families: in-depth study of metals (metallurgy), polymers and ceramics.',
-    'education.e1.sem1.block3.title': 'Applied Mathematics & Simulation',
-    'education.e1.sem1.block3.item1': 'Dynamics & Simulation (Matlab): modeling of dynamic systems and numerical solving (ODE45).',
-    'education.e1.sem1.block3.item2': 'Numerical Analysis & Optimization: differentiable optimization and solving methods.',
-    'education.e1.sem1.block3.item3': 'Partial Differential Equations: physical modeling (heat, Poisson, waves).',
-    'education.e1.sem1.block4.title': 'Electronics & Systems',
-    'education.e1.sem1.block4.item1': 'Analog electronics: diodes, transistors (BJT, N‑MOS), op-amps and multivibrator circuits.',
-    'education.e1.sem1.block4.item2': 'Digital logic: combinational, sequential systems and timers (NE555).',
-    'education.e1.sem1.block5.title': 'Photonics',
-    'education.e1.sem1.block5.item1': 'Physical & geometric optics: matrix approach, polarization and laser technology.',
-    'education.e1.sem1.block6.title': 'Languages & Communication',
-    'education.e1.sem1.block6.item1': 'English',
-    'education.e1.sem1.block6.item2': 'German',
-    'education.e1.sem1.block6.item3': 'Communication',
-    'education.e1.sst': '<strong>Certification</strong> : SST first aid certificate obtained in January 2026',
+    'education.e1.sem1.dates': 'Sept. 2025 – Jan. 2026',
+    'education.e1.sem1.info': 'Yellow Semester — 462h · 30 ECTS · 4 UE',
+    'education.e1.sem1.summary': 'Yellow Semester — first semester',
+    'education.e1.sem1.block1.title': 'Mechanical Design & Engineering — CM1 (90h)',
+    'education.e1.sem1.block1.item1': 'CAD 3D (Creo): 3D modeling, assembly and technical drawings.',
+    'education.e1.sem1.block1.item2': 'Analysis and modeling of mechanical systems: kinematic diagram, hyperstatism.',
+    'education.e1.sem1.block1.item3': 'Functional tolerancing, power transmission sizing, introduction to PLM.',
+    'education.e1.sem1.block2.title': 'Materials Science — SDM1 (90h)',
+    'education.e1.sem1.block2.item1': 'Structure of crystalline materials: crystallography, defects, plasticity, diffusion.',
+    'education.e1.sem1.block2.item2': 'Physical metallurgy: steels, aluminum alloys, heat treatments, TTT/CCT diagrams.',
+    'education.e1.sem1.block2.item3': 'Ceramic and polymer materials: microstructures, mechanical properties.',
+    'education.e1.sem1.block3.title': 'Mathematics & Dynamics (MATH2 + DYN1 — 92h)',
+    'education.e1.sem1.block3.item1': 'MATH2: Calculus of variations, Fourier and Laplace transforms, modeling with Mathematica.',
+    'education.e1.sem1.block3.item2': 'DYN1: Kinematics and dynamics of mechanisms, multibody numerical simulations.',
+    'education.e1.sem1.block4.title': 'Optics & Electronics (OPT1 + ELEC1 — 104h)',
+    'education.e1.sem1.block4.item1': 'OPT1 — Optics (44h): Optical instruments, matrix optics, polarization, lasers, detection.',
+    'education.e1.sem1.block4.item2': 'ELEC1 — Electronics (60h): SPICE simulation, op-amps, semiconductor components, combinational/sequential logic, ADC/DAC.',
+    'education.e1.sem1.block5.title': 'Languages & Humanities (LV2 + SHS2 — 86h)',
+    'education.e1.sem1.block5.item1': 'English (LV1): Engineering English, BULATS preparation, CV and interviews in English.',
+    'education.e1.sem1.block5.item2': 'German (LV2)',
+    'education.e1.sem1.block5.item3': 'SHS2: Professional communication, writing standards, career project, CV and cover letter.',
+    'education.e1.sst': 'SST first aid certificate obtained in January 2026',
 
     'education.e2.title': 'CPGE (MP & MP2I)',
     'education.e2.summary': 'Victor Hugo High School',
@@ -344,11 +383,6 @@ const i18nEn = {
     'education.e3.year3.info': 'General track',
     'education.e3.year3.options': 'Options: TSI (Technology & Engineering Sciences) and European English track',
     'education.e3.result': '<strong>Result</strong> : General Baccalaureate with Math, Physics (and CS) specializations, European English track and Advanced Math option, grade: very good',
-
-    'education.e4.title': 'Middle School',
-    'education.e4.summary': 'Augustin Cournot Middle School',
-    'education.e4.description': '<strong>Description</strong> : General middle school',
-    'education.e4.result': '<strong>Result</strong> : Middle School Diploma with highest honors',
 
     'education.placeholder.title': 'Coming soon',
     'education.placeholder.summary': 'Coming soon',
@@ -480,15 +514,21 @@ const initSpaNavigation = () => {
         }
 
         sections.forEach(section => {
+            const isBecomingInactive = section.classList.contains('active') && section.id !== targetId;
             section.classList.toggle('active', section.id === targetId);
+
+            if (isBecomingInactive) {
+                // Réinitialiser les <details> ouverts (dropdowns Formation)
+                section.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
+                // Signaler aux ProjectsManager de se réinitialiser
+                section.dispatchEvent(new CustomEvent('sectionReset'));
+            }
         });
 
         // Mettre à jour l'état actif de la navigation
         document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-section') === targetId);
         });
-
-
     };
 
     updateActiveSection();

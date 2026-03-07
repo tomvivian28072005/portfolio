@@ -50,6 +50,14 @@ class ProjectsManager {
         this.setupResetButton();
         this.sortProjectsByEndDate();
         this.moveDisabledProjectsToEnd();
+        this.setupSectionReset();
+    }
+
+    setupSectionReset() {
+        if (!this.section) return;
+        this.section.addEventListener('sectionReset', () => {
+            this.restoreInitialOrder();
+        });
     }
 
     sortProjectsByEndDate() {
@@ -367,7 +375,7 @@ class ProjectsManager {
     cleanAllClasses() {
         // Nettoyer toutes les compétences
         this.skillFilters.forEach(filter => {
-            filter.classList.remove('active', 'dimmed', 'is-filtered', 'highlighted');
+            filter.classList.remove('active', 'dimmed', 'is-filtered', 'is-hidden', 'highlighted');
             filter.style.pointerEvents = 'auto';
         });
         
@@ -496,9 +504,9 @@ class ProjectsManager {
         // Identifier et collecter les compétences correspondantes
         this.skillFilters.forEach(filter => {
             const targetSkill = filter.getAttribute('data-target-skill');
-            
+
             if (targetSkill === 'all') {
-                filter.classList.add('is-filtered');
+                filter.classList.add('is-hidden');
                 filter.style.pointerEvents = 'none';
             } else if (skills.includes(targetSkill)) {
                 filter.classList.add('highlighted');
@@ -506,7 +514,7 @@ class ProjectsManager {
                 filter.style.pointerEvents = 'auto';
                 matchingSkills.push(filter);
             } else {
-                filter.classList.add('is-filtered');
+                filter.classList.add('is-hidden');
                 filter.style.pointerEvents = 'none';
             }
         });
@@ -618,6 +626,7 @@ class ProjectsManager {
             filter.classList.remove('active');
             filter.classList.remove('dimmed');
             filter.classList.remove('is-filtered');
+            filter.classList.remove('is-hidden');
             filter.classList.remove('highlighted');
             filter.style.pointerEvents = 'auto';
             
@@ -691,8 +700,9 @@ class ProjectsManager {
             filter.classList.remove('active');
             filter.classList.remove('dimmed');
             filter.classList.remove('is-filtered');
+            filter.classList.remove('is-hidden');
             filter.classList.remove('highlighted');
-            
+
             if (filter.getAttribute('data-target-skill') === 'all') {
                 filter.classList.add('active');
             }
